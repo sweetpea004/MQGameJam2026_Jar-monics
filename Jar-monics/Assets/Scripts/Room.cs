@@ -9,10 +9,12 @@ public class Room : MonoBehaviour
     [SerializeField] private Room toRight;
     [SerializeField] private Room toUp;
     [SerializeField] private Room toDown;
+    [SerializeField] private Point[] points;
 
-public Room GoLeft{
-    get => toLeft ?? this;
-}
+public Room GoLeft
+    {
+        get => toLeft ?? this;
+    }
 public Room GoRight{
     get => toRight?? this;
 }

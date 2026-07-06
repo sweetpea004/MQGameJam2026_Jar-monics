@@ -9,18 +9,18 @@ public class Bottle : Item
 
     //Add mouse position  
 
-    void Awake()
+    protected new void Awake()
     {
+        base.Awake();
         type = BottleType.Clear;
     }
 
     void Start()
     {
-
     }
 
-    void Update()
+    protected new void Update()
     {
-
+        base.Update();
     }
 }

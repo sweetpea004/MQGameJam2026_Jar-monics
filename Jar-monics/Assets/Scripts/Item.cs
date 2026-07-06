@@ -13,6 +13,8 @@ public class Item : MonoBehaviour
 
     private bool isDragged = false;
     private Vector3 mousePos;
+    private Point lastPoint;
+    private Point newPoint;
 
     void OnEnable()
     {
@@ -26,41 +28,65 @@ public class Item : MonoBehaviour
         move.Disable();
     }
 
-    void Awake()
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Point"))
+        {
+            newPoint = collision.gameObject.GetComponent<Point>();
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Point"))
+        {
+            newPoint = null;
+        }
+    }
+
+    protected void Awake()
     {
         input = new PlayerInput();
         click = input.Player.Click;
         move = input.Player.Move;
 
-cam = Camera.main;
+        cam = Camera.main;
         box = GetComponent<BoxCollider2D>();
+
+        lastPoint = GameObject.Find("Point").GetComponent<Point>();
     }
-    
-    void Update()
+
+    protected void Update()
     {
         DraggingItem();
 
-        if(isDragged){
+        if (isDragged)
+        {
             Vector3 position = mousePos;
             position.z = 0;
-            Debug.Log(position);
             transform.position = position;
+        }
+        else
+        {
+            transform.position = Vector3.Lerp(transform.position, lastPoint.transform.position, 0.2f);
         }
     }
 
-void DraggingItem(){
+    void DraggingItem(){
         Vector2 mouse = move.ReadValue<Vector2>();
         mousePos = cam.ScreenToWorldPoint(mouse);
         
-    if(click.WasPressedThisFrame() && box.OverlapPoint(mousePos)){
-        isDragged = true;
-    }
+        if(click.WasPressedThisFrame() && box.OverlapPoint(mousePos)){
+            isDragged = true;
+        }
         
 
         if(click.WasReleasedThisFrame()){
+            if (newPoint != null)
+            {
+                lastPoint = newPoint;
+            }
             isDragged = false;
-
         }
-}
-
+    }
 }
