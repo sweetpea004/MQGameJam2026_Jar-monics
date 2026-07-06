@@ -3,6 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(Border))]
 public class Room : MonoBehaviour
 {
+    [SerializeField] private Screen screenType;
 
     [SerializeField] private Room toLeft;
     [SerializeField] private Room toRight;
@@ -20,6 +21,10 @@ public Room GoUp{
 }
 public Room GoDown{
     get => toDown?? this;
+}
+
+public Screen GetScreenType{
+    get => screenType;
 }
 
 public float GetX{

@@ -31,23 +31,27 @@ public class CameraController : MonoBehaviour
 
     private void Update(){
 
-moveInput();
-moveCamera();
+        moveInput();
+        moveCamera();
 
     }
 
     private void moveInput(){
                 if(moveLeft.WasPressedThisFrame()){
             currentRoom = currentRoom.GoLeft;
+            GameManager.Instance.screenTransition?.Invoke(currentRoom);
         }
         if(moveRight.WasPressedThisFrame()){
             currentRoom = currentRoom.GoRight;
+            GameManager.Instance.screenTransition?.Invoke(currentRoom);
         }
                 if(moveUp.WasPressedThisFrame()){
             currentRoom = currentRoom.GoUp;
+            GameManager.Instance.screenTransition?.Invoke(currentRoom);
         }
                 if(moveDown.WasPressedThisFrame()){
             currentRoom = currentRoom.GoDown;
+            GameManager.Instance.screenTransition?.Invoke(currentRoom);
         }
     }
 
