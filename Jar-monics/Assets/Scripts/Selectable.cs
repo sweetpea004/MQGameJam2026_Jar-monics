@@ -16,10 +16,14 @@ public class Selectable : MonoBehaviour
 
     Camera main;
 
-    void OnClick(InputAction.CallbackContext context)
+    void OnHold(InputAction.CallbackContext context)
     {
-        clicked = !clicked;
-        Debug.Log(mousePos);
+        clicked = true;
+    }
+
+    void OnRelease(InputAction.CallbackContext context)
+    {
+        clicked = false;
     }
 
     void OnEnable()
@@ -41,7 +45,8 @@ public class Selectable : MonoBehaviour
 
         input = new PlayerInput();
         click = input.Player.Click;
-        click.performed += OnClick;
+        click.started += OnHold;
+        click.canceled += OnRelease;
 
         move = input.Player.Move;
 
