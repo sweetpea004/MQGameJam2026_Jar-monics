@@ -2,9 +2,12 @@ using UnityEngine;
 
 public class Bottle : MonoBehaviour
 {
-    private Vector3 direction;
+    private bool playing = false;
+    private Vector3 direction = new Vector3();
     private BottleType type;
-    private Plant plant;
+    [SerializeField] private Plant[] plants = new Plant[3];
+
+    //Add mouse position  
 
     void Awake()
     {
@@ -18,5 +21,6 @@ public class Bottle : MonoBehaviour
 
     void Update()
     {
+
     }
 }
