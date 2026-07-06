@@ -11,29 +11,38 @@ public class Room : MonoBehaviour
     [SerializeField] private Room toDown;
     [SerializeField] private Point[] points;
 
-public Room GoLeft
+    public Room GoLeft
     {
         get => toLeft ?? this;
     }
-public Room GoRight{
-    get => toRight?? this;
-}
-public Room GoUp{
-    get => toUp?? this;
-}
-public Room GoDown{
-    get => toDown?? this;
-}
 
-public Screen GetScreenType{
-    get => screenType;
-}
+    public Room GoRight
+    {
+        get => toRight ?? this;
+    }
 
-public float GetX{
-    get => transform.position.x;
-}
+    public Room GoUp
+    {
+        get => toUp ?? this;
+    }
 
-public float GetY{
-    get => transform.position.y;
-}
+    public Room GoDown
+    {
+        get => toDown ?? this;
+    }
+
+    public Screen GetScreenType
+    {
+        get => screenType;
+    }
+
+    public float GetX
+    {
+        get => transform.position.x;
+    }
+
+    public float GetY
+    {
+        get => transform.position.y;
+    }
 }

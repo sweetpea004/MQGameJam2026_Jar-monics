@@ -37,7 +37,7 @@ public class CameraController : MonoBehaviour
     }
 
     private void moveInput(){
-                if(moveLeft.WasPressedThisFrame()){
+        if(moveLeft.WasPressedThisFrame()){
             currentRoom = currentRoom.GoLeft;
             GameManager.Instance.screenTransition?.Invoke(currentRoom);
         }
@@ -45,19 +45,19 @@ public class CameraController : MonoBehaviour
             currentRoom = currentRoom.GoRight;
             GameManager.Instance.screenTransition?.Invoke(currentRoom);
         }
-                if(moveUp.WasPressedThisFrame()){
+        if(moveUp.WasPressedThisFrame()){
             currentRoom = currentRoom.GoUp;
             GameManager.Instance.screenTransition?.Invoke(currentRoom);
         }
-                if(moveDown.WasPressedThisFrame()){
+        if(moveDown.WasPressedThisFrame()){
             currentRoom = currentRoom.GoDown;
             GameManager.Instance.screenTransition?.Invoke(currentRoom);
         }
     }
 
     private void moveCamera(){
-        
-        transform.position = new Vector3(currentRoom.GetX, currentRoom.GetY, transform.position.z);
+        transform.position = Vector3.Lerp(transform.position, new Vector3(currentRoom.GetX, currentRoom.GetY, transform.position.z), 0.1f);
+        Debug.Log(transform.position);
     }
 
 }

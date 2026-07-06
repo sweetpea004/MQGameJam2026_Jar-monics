@@ -3,13 +3,18 @@ using System;
 
 public class GameManager : MonoBehaviour
 {
-    private static GameManager singleton;
-    public static GameManager Instance{
-        get{
-        if(singleton == null){
-            singleton = new GameManager();
+    private static GameManager instance;
+
+    public static GameManager Instance
+    {
+        get
+        {
+            return instance;
         }
-        return singleton;
+
+        set
+        {
+            instance = new GameManager();
         }
     }
 
@@ -18,9 +23,9 @@ public class GameManager : MonoBehaviour
     // public event ScreenTransitionEventHandler OnScreenTransition;
 
     private void Awake(){
-        if(singleton == null){
+        if(Instance == null){
             //assign
-            singleton = this;
+            Instance = this;
         }else{
             Destroy(this);
         }
