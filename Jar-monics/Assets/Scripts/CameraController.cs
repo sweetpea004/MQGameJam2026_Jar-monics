@@ -5,9 +5,8 @@ public class CameraController : MonoBehaviour
 {
 
     [SerializeField] private Room startingRoom;
-    private Room currentRoom;
+    [SerializeField] private Room currentRoom;
 
-    [SerializeField] private Room[] rooms;
     private PlayerInput actions;
     private InputAction moveLeft;
     private InputAction moveRight;
@@ -15,7 +14,6 @@ public class CameraController : MonoBehaviour
     private InputAction moveDown;
 
     private void Awake(){
-        rooms = FindObjectsByType<Room>(FindObjectsSortMode.InstanceID);
         currentRoom = startingRoom;
     }
 

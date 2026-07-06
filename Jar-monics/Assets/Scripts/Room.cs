@@ -10,6 +10,9 @@ public class Room : MonoBehaviour
     [SerializeField] private Room toUp;
     [SerializeField] private Room toDown;
 
+    [SerializeField] private GameObject playArea;
+
+
 public Room GoLeft{
     get => toLeft ?? this;
 }
@@ -25,6 +28,9 @@ public Room GoDown{
 
 public Screen GetScreenType{
     get => screenType;
+}
+public GameObject GetPlayArea{
+    get => playArea;
 }
 
 public float GetX{

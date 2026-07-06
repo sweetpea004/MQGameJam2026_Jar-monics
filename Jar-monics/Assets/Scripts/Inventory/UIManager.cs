@@ -1,9 +1,19 @@
 using UnityEngine;
 
-public class UI : MonoBehaviour
+public class UIManager : MonoBehaviour
 {
     [SerializeField] GameObject seedPanel;
+    [SerializeField] GameObject playSpace;
 
+        private static UIManager singleton;
+    public static UIManager Instance{
+        get{
+        if(singleton == null){
+            Debug.LogError("uh oh");
+        }
+        return singleton;
+        }
+    }
 
     void Start(){
         GameManager.Instance.screenTransition += ToggleUI;

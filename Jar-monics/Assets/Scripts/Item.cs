@@ -41,9 +41,9 @@ cam = Camera.main;
         DraggingItem();
 
         if(isDragged){
-            Vector3 position = mousePos;
-            position.z = 0;
-            Debug.Log(position);
+            Vector2 position = mousePos;
+            // position.z = 0;
+            // Debug.Log(position);
             transform.position = position;
         }
     }
@@ -54,6 +54,7 @@ void DraggingItem(){
         
     if(click.WasPressedThisFrame() && box.OverlapPoint(mousePos)){
         isDragged = true;
+        GameManager.Instance.OnItemStartedDragging?.Invoke(this);
     }
         
 
