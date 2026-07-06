@@ -5,7 +5,7 @@ public class Selectable : MonoBehaviour
 {
     private bool clicked;
 
-    [SerializeField] private float moveSpeed;
+    [SerializeField] private float moveSpeed = 1;
     [SerializeField] private PlayerInput input;
     private InputAction click;
     private InputAction move;
@@ -42,15 +42,18 @@ public class Selectable : MonoBehaviour
 
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        mousePos = move.ReadValue<Vector2>();
-        mousePos = Camera.main.ScreenToWorldPoint(mousePos);
-        Debug.Log(mousePos);
-        
         if (clicked)
         {
-
+            mousePos = move.ReadValue<Vector2>();
+            mousePos = Camera.main.ScreenToWorldPoint(mousePos);
+            transform.position = Vector3.Lerp(transform.position, new Vector3(mousePos.x, mousePos.y), 0.2f);
         }
+    }
+
+    void Update()
+    {        
+        
     }
 }
