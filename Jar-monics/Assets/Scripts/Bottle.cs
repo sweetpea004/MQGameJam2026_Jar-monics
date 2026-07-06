@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Bottle : MonoBehaviour
+public class Bottle : Item
 {
     private Vector3 direction;
     private BottleType type;

@@ -1,11 +1,7 @@
 using UnityEngine;
 
-public class Plant : Item
+public class Seed : Item
 {
-    private Vector3 direction;
-    private PlantType type;
-
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
