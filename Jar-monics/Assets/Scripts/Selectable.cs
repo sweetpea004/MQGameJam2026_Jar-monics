@@ -1,3 +1,5 @@
+using UnityEditor.Analytics;
+using UnityEditor.Scripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,7 +12,9 @@ public class Selectable : MonoBehaviour
     private InputAction click;
     private InputAction move;
     private GameObject item;
-    private Vector2 mousePos = new Vector2();
+    private Vector3 mousePos = new Vector3(0,0,0);
+
+    Camera main;
 
     void OnClick(InputAction.CallbackContext context)
     {
@@ -32,6 +36,7 @@ public class Selectable : MonoBehaviour
 
     void Awake()
     {
+        main = Camera.main;
         clicked = false;
 
         input = new PlayerInput();
@@ -47,8 +52,9 @@ public class Selectable : MonoBehaviour
         if (clicked)
         {
             mousePos = move.ReadValue<Vector2>();
-            mousePos = Camera.main.ScreenToWorldPoint(mousePos);
-            transform.position = Vector3.Lerp(transform.position, new Vector3(mousePos.x, mousePos.y), 0.2f);
+            mousePos = main.ScreenToWorldPoint(mousePos);
+            mousePos.z = 0;
+            transform.position = Vector3.Lerp(transform.position, mousePos, 0.5f);
         }
     }
 
