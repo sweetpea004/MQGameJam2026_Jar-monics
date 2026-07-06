@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Bottle : MonoBehaviour
+public class Bottle : Item
 {
     private bool playing = false;
     private Vector3 direction = new Vector3();
