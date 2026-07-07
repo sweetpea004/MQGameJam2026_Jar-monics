@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: be68b11cf7b6876cdb9cd0b92ec1d6d2
+guid: 0317834d14b3c46598b7ae350defacb9
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -126,52 +126,22 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
-  animatedSpriteImportData:
-  - name: fern-4
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    customData: 
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 4
-      width: 60
-      height: 64
-    spriteID: f8b1e8ed104918e04b5cd135d2f85d54
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 4}
+  animatedSpriteImportData: []
   spriteSheetImportData: []
   tileSetImportData: []
   asepriteLayers:
   - layerIndex: 0
     uuid:
-      value0: 3506047198
+      value0: 4089935663
       value1: 0
       value2: 0
       value3: 0
     guid: 0
-    name: fern-4
+    name: succulent-2
     layerFlags: 0
     layerType: 0
     blendMode: 0
-    cells:
-    - name: fern-4
-      frameIndex: 0
-      additiveSortOrder: 0
-      cellRect:
-        x: 1
-        y: 0
-        width: 60
-        height: 64
-      spriteId: f8b1e8ed104918e04b5cd135d2f85d54
+    cells: []
     linkedCells: []
     tileCells: []
     tileSetIndex: 0
@@ -182,4 +152,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 64, y: 64}
-  previousTextureSize: {x: 128, y: 128}
+  previousTextureSize: {x: 0, y: 0}

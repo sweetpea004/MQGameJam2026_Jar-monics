@@ -5,10 +5,12 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(BoxCollider2D))]
+[RequireComponent(typeof(Rigidbody2D))]
 public class Item : MonoBehaviour
 {
     private Camera cam;
     private BoxCollider2D box;
+    private Rigidbody2D body;
 
     private PlayerInput input;
     private InputAction click;
@@ -55,6 +57,9 @@ public class Item : MonoBehaviour
 
         cam = Camera.main;
         box = GetComponent<BoxCollider2D>();
+        body = GetComponent<Rigidbody2D>();
+
+        body.bodyType = RigidbodyType2D.Kinematic;
     }
 
     protected void Update()
@@ -79,7 +84,10 @@ public class Item : MonoBehaviour
         
         if(click.WasPressedThisFrame() && box.OverlapPoint(mousePos)){
             isDragged = true;
-            lastPoint.Occupant = null;
+            if(lastPoint != null)
+            {
+                lastPoint.Occupant = null;
+            }
         }
         
 
@@ -87,11 +95,27 @@ public class Item : MonoBehaviour
             if (newPoints.Count > 0)
             {
                 newPoints = newPoints.OrderBy(p => Vector3.Distance(transform.position, p.transform.position)).ToList();
-                lastPoint = newPoints.ElementAt(0);
+                for(int i = 0; i < newPoints.Count; i++)
+                {
+                    if(gameObject.layer == LayerMask.NameToLayer("Bottle") && !newPoints.ElementAt(i).RejectBottle)
+                    {
+                        lastPoint = newPoints.ElementAt(i);
+                        break;
+                    }
+                    else if(gameObject.layer == LayerMask.NameToLayer("Plant") && !newPoints.ElementAt(i).RejectPlant)
+                    {
+                        lastPoint = newPoints.ElementAt(i);
+                        break;
+                    }
+                }
             }
             isDragged = false;
-            lastPoint.Occupant = this;
-            transform.localScale = lastPoint.transform.localScale * 2;
+
+            if(lastPoint != null)
+            {
+                lastPoint.Occupant = this;
+                transform.localScale = lastPoint.transform.localScale * 2;
+            }
         }
     }
 }
