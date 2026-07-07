@@ -1092,6 +1092,10 @@ PrefabInstance:
       propertyPath: blankSpawner
       value: 
       objectReference: {fileID: 6110022191290482118, guid: 6ee65ff4601ed774ca3450f6c61ffcb9, type: 3}
+    - target: {fileID: 2637301276542864165, guid: adc364a33a8e72740bf5adc6b51a67aa, type: 3}
+      propertyPath: demoParentRoom
+      value: 
+      objectReference: {fileID: 1461657445}
     - target: {fileID: 3951732185875873023, guid: adc364a33a8e72740bf5adc6b51a67aa, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
