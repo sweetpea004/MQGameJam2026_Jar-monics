@@ -6,6 +6,13 @@ public class Plant : Item
 {
     private String plantTypeString;
     [SerializeField] private PlantType type;
+    public PlantType Type
+    {
+        get
+        {
+            return type;
+        }
+    }
     private SpriteRenderer sprite;
     private AudioSource audio;
 
@@ -55,6 +62,7 @@ public class Plant : Item
         audio = gameObject.GetComponent<AudioSource>();
  
         SetSprite();
+        SetMusic();
     }
 
     public void Init(PlantType t)
@@ -110,6 +118,16 @@ public class Plant : Item
         }
     }
 
+    public void PlayMusic()
+    {
+        audio.Play();
+    }
+
+    public void StopMusic()
+    {
+        audio.Stop();
+    }
+
     void Grow()
     {
         if (stage < maxStage)
@@ -136,10 +154,6 @@ public class Plant : Item
     }
 
     public override void OnItemReleased()
-    {
-    }
-
-    public override void OnItemSelected()
     {
     }
 }
