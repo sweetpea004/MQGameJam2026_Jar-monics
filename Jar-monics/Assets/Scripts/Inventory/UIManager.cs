@@ -125,13 +125,13 @@ public class UIManager : MonoBehaviour
             {
                 continue;
             }
-            
+            Plant plantScript = item.GetPlantItem as Plant;
+            PlantStage pStage = SOManager.Instance.GetPlant(plantScript.GetPlantType);
             ItemSpawner sp = blankSpawner.GetComponent<ItemSpawner>();
-            sp.SetSpawned(plantPrefab);
+            sp.SetSpawned(pStage.Prefab[plantScript.Stage]);
             sp.SetParent(demoParentRoom);
-           
-            Sprite sprite = plantPrefab.GetComponentInChildren<SpriteRenderer>().sprite;
 
+            Sprite sprite = pStage.Stages[plantScript.Stage];
             sp.GetComponentInChildren<UnityEngine.UI.Image>().sprite = sprite;
 
             GameObject spawner = Instantiate(blankSpawner, transform.position, Quaternion.identity, plantPanel.transform);

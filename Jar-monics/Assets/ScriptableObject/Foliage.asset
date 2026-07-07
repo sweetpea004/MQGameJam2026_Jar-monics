@@ -13,7 +13,12 @@ MonoBehaviour:
   m_Name: Foliage
   m_EditorClassIdentifier: Assembly-CSharp::PlantStage
   stages:
-  - {fileID: -855298285791758126, guid: a81b1ef1ef7c2af44901894f5c504ada, type: 3}
-  - {fileID: 6937817954938267909, guid: 9253d2daf0724b04c80a4d61f7199b4a, type: 3}
-  - {fileID: 1090376217813512402, guid: e0332b06fe6a15b418ff6af5191f8f78, type: 3}
-  - {fileID: -3033962309406360609, guid: 32809b774c615ff488418610b52c1e60, type: 3}
+  - {fileID: 7536458381352112627, guid: 458378df980246e458d2a3378fd842e4, type: 3}
+  - {fileID: -8728439389244122734, guid: a84217b6193304b45bbd808cf64f65fe, type: 3}
+  - {fileID: -9105386156181285351, guid: 3ee3fa6d463e4324b99176cf1dd4431a, type: 3}
+  - {fileID: -1568637543657111260, guid: 3f0f11d7a26309743bf6f2b13a0dcb8a, type: 3}
+  prefabs:
+  - {fileID: 6493590436861539216, guid: b1ef71f095131fc43a0f1ced7feb6a6e, type: 3}
+  - {fileID: 68068872354243741, guid: 9ca43712b7305ce4b8b90164b65e99a3, type: 3}
+  - {fileID: 824717386378274957, guid: 77ac8770e78973e41b1b95ba8b7b2f01, type: 3}
+  - {fileID: 2609595265687421782, guid: a8d714462dfaf714b816912ce949ea8a, type: 3}

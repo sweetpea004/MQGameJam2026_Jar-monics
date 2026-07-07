@@ -3,8 +3,11 @@ using UnityEngine;
 
 public class Plant : Item
 {
-    private String plantTypeString;
     private PlantType type;
+    public PlantType GetPlantType
+    {
+        get => type;
+    }
     private SpriteRenderer sprite;
 
     [SerializeField] private int stage = 0;
@@ -30,34 +33,12 @@ public class Plant : Item
 
     protected void Start()
     {
-        type = PlantType.Foliage;
-
-
-        switch (type)
+        if (type == PlantType.Foliage)
         {
-            case PlantType.Fern:
-                plantTypeString = "Fern";
-                break;
-            case PlantType.Succulent:
-                plantTypeString = "Succulent";
-                maxStage = 3;
-                break;
-            case PlantType.Cactus:
-                plantTypeString = "Cactus";
-                break;
-            case PlantType.Moss:
-                plantTypeString = "Moss";
-                break;
-            case PlantType.Foliage:
-                plantTypeString = "Foliage";
-                maxStage = 3;
-
-                break;
+            maxStage = 3;
         }
 
         sprite = gameObject.GetComponent<SpriteRenderer>();
- 
-        SetSprite();
     }
 
     public void Init(PlantType t, bool isMajor)
@@ -66,65 +47,7 @@ public class Plant : Item
         isMaj = isMajor;
     }
 
-    void SetSprite()
-    {
-
-        GameObject sprites = GameObject.Find(plantTypeString);
-
-        switch (type)
-        {
-            case PlantType.Fern:
-                sprite.sprite = SOManager.Instance.GetPlant(type).Stages[stage];
-                break;
-            case PlantType.Succulent:
-                sprite.sprite = SOManager.Instance.GetPlant(type).Stages[stage];
-                break;
-            case PlantType.Cactus:
-                sprite.sprite = SOManager.Instance.GetPlant(type).Stages[stage];
-                break;
-            case PlantType.Moss:
-                sprite.sprite = SOManager.Instance.GetPlant(type).Stages[stage];
-                break;
-            case PlantType.Foliage:
-                if (stage < 2 || isMaj)
-                {
-                    sprite.sprite = SOManager.Instance.GetPlant(type).Stages[stage];
-                }
-                else
-                {
-                    sprite.sprite = SOManager.Instance.GetPlant(type).Stages[stage + 1];
-                }
-
-                break;
-        }
-    }
-
-    void Grow()
-    {
-        if (stage < maxStage)
-        {
-            stage++;
-        }
-
-        SetSprite();
-    }
-
-    void FixedUpdate()
-    {
-        SetSprite();
-    }
-
-    // Update is called once per frame
-    protected new void Update()
-    {
-
-    }
     public override void OnItemSelected()
-    {
-        base.Update();
-    }
-
-    public override void OnItemReleased()
     {
     }
 }

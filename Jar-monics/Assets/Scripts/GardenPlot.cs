@@ -28,7 +28,8 @@ public class GardenPlot : MonoBehaviour
     {
         if (plant != null)
         {
-            Destroy(plant.gameObject);
+            GardenPlant gPlant = GetComponentInChildren<GardenPlant>();
+            Destroy(gPlant.gameObject);
         }
     }
 

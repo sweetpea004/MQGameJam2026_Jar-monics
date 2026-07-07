@@ -6,7 +6,7 @@ public class ItemElement
     private int quantity;
     private Item item;
 
-    public Item GetItem
+    public Item GetPlantItem
     {
         get => item;
     }
