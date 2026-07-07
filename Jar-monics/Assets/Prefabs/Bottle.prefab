@@ -72,9 +72,9 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0}
     oldSize: {x: 0.64, y: 0.64}
-    newSize: {x: 0.2, y: 0.2}
+    newSize: {x: 0.64, y: 0.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -93,12 +93,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3035374a7f9e9342b077b88e52e1d9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bottle
+  lerpSpeed: 10
   lastPoint: {fileID: 0}
   pointPrefab: {fileID: 4254607685525150080, guid: 0db759f843eb20241ae6ff49b7fedd30, type: 3}
-  plants:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  plantSpots:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  occupants: 0
 --- !u!50 &6372487203282298806
 Rigidbody2D:
   serializedVersion: 5
@@ -173,14 +175,14 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -4336687855092438513, guid: a9deb20ebfb3c7b839fb125f0e05b685, type: 3}
+  m_Sprite: {fileID: -574336876454817985, guid: 8a19834982a791d47adbf9cd38c23e99, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.2, y: 0.2}
+  m_Size: {x: 0.64, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

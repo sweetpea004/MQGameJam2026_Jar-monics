@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5c66dbcba6f5ee4d9566e7b66c92236, type: 3}
+  m_Name: Succulent
+  m_EditorClassIdentifier: Assembly-CSharp::PlantStage
+  stages:
+  - {fileID: -855298285791758126, guid: 67da78902dcaef2d197572f2dcc26420, type: 3}
+  - {fileID: 6937817954938267909, guid: eedde9633df712119bd3ba4052958b73, type: 3}
+  - {fileID: -6470460504253458178, guid: 1938907f445accde1bf03d0bf7917554, type: 3}

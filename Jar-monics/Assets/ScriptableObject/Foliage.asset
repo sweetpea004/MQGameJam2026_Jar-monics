@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5c66dbcba6f5ee4d9566e7b66c92236, type: 3}
+  m_Name: Foliage
+  m_EditorClassIdentifier: Assembly-CSharp::PlantStage
+  stages:
+  - {fileID: -5382199391509058341, guid: dd6f17c096cf36d0e92196de12b6935c, type: 3}
+  - {fileID: 1732015861850713364, guid: 54aad7647569fe456b387b1f2ce99dff, type: 3}
+  - {fileID: 117119006023367679, guid: efc2d545c05582c7c83cfc1397463d20, type: 3}
+  - {fileID: 2653816373924519562, guid: 102845fb2d02ae18084427ecb510b175, type: 3}

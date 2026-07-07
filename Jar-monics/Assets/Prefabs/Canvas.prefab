@@ -1730,6 +1730,9 @@ MonoBehaviour:
   seedPanel: {fileID: 2091959922755866068}
   plantPanel: {fileID: 8656840907067174440}
   bottlePanel: {fileID: 8541071431704518989}
+  plantPrefab: {fileID: 4419529992849132348, guid: 19bc4c33e5a091e47b232ca70fa693d7, type: 3}
+  blankSpawner: {fileID: 6110022191290482118, guid: 6ee65ff4601ed774ca3450f6c61ffcb9, type: 3}
+  demoParentRoom: {fileID: 0}
 --- !u!1001 &5761774395147937350
 PrefabInstance:
   m_ObjectHideFlags: 0
