@@ -628,10 +628,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Foliage
   stages:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: -855298285791758126, guid: 37c7141abfdf1f20f9411d63267fb363, type: 3}
+  - {fileID: 6937817954938267909, guid: 237b33c9a6f90a11da40b6fa54672064, type: 3}
+  - {fileID: 1090376217813512402, guid: 093d98744cf47c25d936a75a9699f90f, type: 3}
+  - {fileID: -3033962309406360609, guid: 9b1c389f22802519e95f047ee0c681be, type: 3}
 --- !u!4 &492896230
 Transform:
   m_ObjectHideFlags: 0
@@ -681,6 +681,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Plant
   lerpSpeed: 10
   lastPoint: {fileID: 0}
+  stage: 0
 --- !u!50 &571234880
 Rigidbody2D:
   serializedVersion: 5
@@ -1298,7 +1299,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1223048818}
-  - component: {fileID: 1223048817}
+  - component: {fileID: 1223048819}
   m_Layer: 0
   m_Name: Moss
   m_TagString: Untagged
@@ -1306,22 +1307,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1223048817
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1223048816}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33ebe4deabcc20e62bfc601f4f255977, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Moss
-  stages:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!4 &1223048818
 Transform:
   m_ObjectHideFlags: 0
@@ -1337,6 +1322,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1223048819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1223048816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33ebe4deabcc20e62bfc601f4f255977, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Moss
+  stages:
+  - {fileID: -855298285791758126, guid: 335c44c49d0987c92979470ced74aef4, type: 3}
+  - {fileID: 6937817954938267909, guid: d4e7de5217cdb4d7d8a11e918da78240, type: 3}
+  - {fileID: -6470460504253458178, guid: 603797a4c6682f96dacc6d875d78f6f3, type: 3}
+  - {fileID: -4178046375966092550, guid: d722f0eb6321333499d0e4d8a026c5ec, type: 3}
 --- !u!114 &1295433507 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6210797073252919222, guid: 3152de886cd362145b7d46d318010df8, type: 3}
@@ -1524,10 +1526,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cactus
   stages:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: -855298285791758126, guid: 235d5697a5b82d86ab2bcb84c203b65c, type: 3}
+  - {fileID: 6937817954938267909, guid: 6f1a0f299a0648e61a02603cd72807f5, type: 3}
+  - {fileID: -6470460504253458178, guid: 477689846e7c455058ae3a7f6edfb1c2, type: 3}
+  - {fileID: -4178046375966092550, guid: 6dc9337a1241bf409b520eceec107ef1, type: 3}
 --- !u!4 &1576901598
 Transform:
   m_ObjectHideFlags: 0
@@ -1805,10 +1807,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Fern
   stages:
-  - {fileID: 1946641213956197516, guid: ca2b5cc8905a547d7aa3eeac18689f9c, type: 3}
-  - {fileID: -2264080734060356825, guid: 0cd180865209f92939fbb192f79f3dc2, type: 3}
-  - {fileID: 6839009416045962033, guid: 8370d140621ad6a6f9a687e9ea063dd2, type: 3}
-  - {fileID: -4707189006086487611, guid: be68b11cf7b6876cdb9cd0b92ec1d6d2, type: 3}
+  - {fileID: -855298285791758126, guid: 215e88d078c7ba001a59079ea7d8cd9d, type: 3}
+  - {fileID: 6937817954938267909, guid: 6234633938a5228cbb30295ae2df8189, type: 3}
+  - {fileID: -6470460504253458178, guid: 872b619bb911a336c9940865fef3e290, type: 3}
+  - {fileID: -4178046375966092550, guid: 0c9c7a50626b2a6b785ca32e82f439a9, type: 3}
 --- !u!1 &1861092201
 GameObject:
   m_ObjectHideFlags: 0
@@ -1839,9 +1841,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Succulent
   stages:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: -855298285791758126, guid: 67da78902dcaef2d197572f2dcc26420, type: 3}
+  - {fileID: 6937817954938267909, guid: eedde9633df712119bd3ba4052958b73, type: 3}
+  - {fileID: -6470460504253458178, guid: 1938907f445accde1bf03d0bf7917554, type: 3}
 --- !u!4 &1861092203
 Transform:
   m_ObjectHideFlags: 0
