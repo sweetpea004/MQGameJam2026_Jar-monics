@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
     public PlayerInput actions;
     public InputAction ClickMouse { get; private set; }
     public InputAction MoveMouse { get; private set; }
-
+    public Vector2 ViewportMousePos { get; private set; }
     public Vector2 WorldMousePos { get; private set; }
 
     private void Awake()
@@ -85,7 +85,8 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        WorldMousePos = cam.ScreenToWorldPoint(MoveMouse.ReadValue<Vector2>());
+        ViewportMousePos = MoveMouse.ReadValue<Vector2>();
+        WorldMousePos = cam.ScreenToWorldPoint(ViewportMousePos);
     }
 }
 

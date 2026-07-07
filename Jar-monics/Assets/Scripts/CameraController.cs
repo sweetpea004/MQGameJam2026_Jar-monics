@@ -65,7 +65,6 @@ public class CameraController : MonoBehaviour
     private void moveCamera()
     {
         transform.position = Vector3.Lerp(transform.position, new Vector3(currentRoom.GetX, currentRoom.GetY, transform.position.z), transitionSpeed * Time.deltaTime);
-        Debug.Log(transform.position);
     }
 
 }

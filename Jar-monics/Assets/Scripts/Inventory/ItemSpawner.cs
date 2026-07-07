@@ -13,9 +13,9 @@ public class ItemSpawner : MonoBehaviour
 
     private void Update()
     {
-        // Debug.Log(box.OverlapPoint(GameManager.Instance.WorldMousePos) + string.Format("({0})", GameManager.Instance.WorldMousePos));
+        Debug.Log(box.OverlapPoint(GameManager.Instance.ViewportMousePos) + string.Format("({0})", GameManager.Instance.ViewportMousePos));
 
-        if (GameManager.Instance.ClickMouse.WasPressedThisFrame() && box.OverlapPoint(GameManager.Instance.WorldMousePos))
+        if (GameManager.Instance.ClickMouse.WasPressedThisFrame() && box.OverlapPoint(GameManager.Instance.ViewportMousePos))
         {
             //do stuff
             GameObject obj = Instantiate(spawned, GameManager.Instance.WorldMousePos, Quaternion.identity, parentRoom.transform);
