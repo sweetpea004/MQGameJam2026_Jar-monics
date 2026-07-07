@@ -36,7 +36,7 @@ public class GardenPlant : MonoBehaviour
         }
     }
 
-    private void AdvanceStage()
+    public void AdvanceStage()
     {
         PlantStage plant = SOManager.Instance.GetPlant(type);
         stage++;
