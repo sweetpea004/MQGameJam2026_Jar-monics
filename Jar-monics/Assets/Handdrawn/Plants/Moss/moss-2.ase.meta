@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e90ecc1bbf2f436918dd27864cdbbe27
+guid: 0a98c2d88029b43479c1329ec2e7f846
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -139,7 +139,7 @@ ScriptedImporter:
       y: 4
       width: 51
       height: 18
-    spriteID: ccdc549204149d46aaa0e69f1ffe9518
+    spriteID: 28c95a42aa860d941983ea3b75c5abec
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -171,7 +171,7 @@ ScriptedImporter:
         y: 0
         width: 51
         height: 18
-      spriteId: ccdc549204149d46aaa0e69f1ffe9518
+      spriteId: 28c95a42aa860d941983ea3b75c5abec
     linkedCells: []
     tileCells: []
     tileSetIndex: 0
