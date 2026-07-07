@@ -90,6 +90,7 @@ public abstract class Item : MonoBehaviour
         if (isDragged)
         {
             transform.position = GameManager.Instance.WorldMousePos;
+            Debug.Log("Dragging" + gameObject.name);
         }
 
         if (!isDragged && lastPoint != null && shouldLerpToPoint)

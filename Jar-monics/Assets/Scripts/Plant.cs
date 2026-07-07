@@ -1,18 +1,13 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Plant : Item
 {
-    private PlantType type;
-    public PlantType GetPlantType
-    {
-        get => type;
-    }
-    public new string GetName
-    {
-        get => string.Format("{0}-Stage{1}", type, stage);
-    }
+    private String plantTypeString;
+    [SerializeField] private PlantType type;
     private SpriteRenderer sprite;
+    private new AudioSource audio;
 
     [SerializeField] private int stage = 0;
     public int Stage
@@ -29,29 +24,106 @@ public class Plant : Item
         }
     }
     private int maxStage = 4; //All but two plants have 4 stages, the other two have had this value changed in Awake()
-    public int GetMaxStage
-    {
-        get => maxStage;
-    }
-    [SerializeField] private bool isMaj = false;
+    [SerializeField] private Tonality tonality = Tonality.Neutral;
 
 
     protected void Start()
     {
-        if (type == PlantType.Foliage)
+        switch (type)
         {
-            maxStage = 3;
+            case PlantType.Fern:
+                plantTypeString = "Fern";
+                break;
+            case PlantType.Succulent:
+                plantTypeString = "Succulent";
+                maxStage = 3;
+                break;
+            case PlantType.Cactus:
+                plantTypeString = "Cactus";
+                break;
+            case PlantType.Moss:
+                plantTypeString = "Moss";
+                break;
+            case PlantType.Foliage:
+                plantTypeString = "Foliage";
+                maxStage = 3;
+
+                break;
         }
 
         sprite = gameObject.GetComponent<SpriteRenderer>();
+        audio = gameObject.GetComponent<AudioSource>();
+ 
+        SetSprite();
+        SetMusic();
+
+        PlayMusic();
     }
 
-    public void Init(PlantType t, bool isMajor)
+    public void Init(PlantType t)
     {
         type = t;
-        isMaj = isMajor;
     }
-    public override void OnItemReleased()
+
+    void SetSprite()
+    {
+        switch (type)
+        {
+            case PlantType.Fern:
+                sprite.sprite = SOManager.Instance.GetPlant(type).Stages[stage];
+                break;
+            case PlantType.Succulent:
+                sprite.sprite = SOManager.Instance.GetPlant(type).Stages[stage];
+                break;
+            case PlantType.Cactus:
+                sprite.sprite = SOManager.Instance.GetPlant(type).Stages[stage];
+                break;
+            case PlantType.Moss:
+                sprite.sprite = SOManager.Instance.GetPlant(type).Stages[stage];
+                break;
+            case PlantType.Foliage:
+                if (stage < 2 || tonality == Tonality.Neutral || tonality == Tonality.Major)
+                {
+                    sprite.sprite = SOManager.Instance.GetPlant(type).Stages[stage];
+                }
+                else
+                {
+                    sprite.sprite = SOManager.Instance.GetPlant(type).Stages[stage + 1];
+                }
+
+                break;
+        }
+    }
+
+    void SetMusic()
+    {
+        switch (tonality)
+        {
+            case Tonality.Major:
+                audio.clip = SOManager.Instance.GetPlant(type).MajorTracks[stage];
+                break;
+
+            case Tonality.Neutral:
+                audio.clip = SOManager.Instance.GetPlant(type).NeutralTracks[stage];
+                break;
+
+            case Tonality.Minor:
+                audio.clip = SOManager.Instance.GetPlant(type).MinorTracks[stage];
+                break;
+        }
+    }
+
+    public void PlayMusic()
+    {
+        audio.Play();
+    }
+
+    public void StopMusic()
+    {
+        audio.Stop();
+    }
+
+    void Grow()
     {
     }
 

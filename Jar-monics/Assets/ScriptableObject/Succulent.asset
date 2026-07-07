@@ -16,7 +16,15 @@ MonoBehaviour:
   - {fileID: -855298285791758126, guid: aeb21db13b24a06419b4feff9dd7c858, type: 3}
   - {fileID: 6937817954938267909, guid: a56af4330a319ce4a8c37482d99ef033, type: 3}
   - {fileID: -6470460504253458178, guid: 1a9d18ea27f2e07428a5a4f1cf17e05b, type: 3}
-  prefabs:
-  - {fileID: 4324865575133318968, guid: a918ac586e4b5fa49beac92708cf2c85, type: 3}
-  - {fileID: 1517621214850115805, guid: 082e142703dbc454d896bece25a6bb0b, type: 3}
-  - {fileID: 7356701741135205981, guid: 0c7d5e4b2488b1a4f98abe2430d6d70e, type: 3}
+  minorTracks:
+  - {fileID: 8300000, guid: cebfda5f83636ab0a95a5b602cdca97c, type: 3}
+  - {fileID: 8300000, guid: 64c327d5626df5762a03b6cc0700e8dd, type: 3}
+  - {fileID: 8300000, guid: b8782d1117d85a887a05cdd1cee5cf0b, type: 3}
+  neutralTracks:
+  - {fileID: 8300000, guid: f5dc31fc54cc44ef6b4d4481a3c37b33, type: 3}
+  - {fileID: 8300000, guid: 6267f9264d8b16aba882cb48b42806e0, type: 3}
+  - {fileID: 8300000, guid: 7ebe7d791d647c02bb6ce554186662f4, type: 3}
+  majorTracks:
+  - {fileID: 8300000, guid: 15436876eb70d6d76bd75becf881bd2b, type: 3}
+  - {fileID: 8300000, guid: 93699a4e5ed2ce1f3a6a1d496dbc4aef, type: 3}
+  - {fileID: 8300000, guid: 5629416574e1706ca9c5affd8c6c8d70, type: 3}
