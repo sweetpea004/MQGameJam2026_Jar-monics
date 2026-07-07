@@ -18,7 +18,7 @@ public class Point : MonoBehaviour
         }
     }
 
-    private bool rejectPlant = false;
+    [SerializeField] private bool rejectPlant = false;
     public bool RejectPlant
     {
         get
@@ -32,7 +32,7 @@ public class Point : MonoBehaviour
         }
     }
 
-    private bool rejectBottle = false;
+    [SerializeField] private bool rejectBottle = false;
     public bool RejectBottle
     {
         get

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5c66dbcba6f5ee4d9566e7b66c92236, type: 3}
+  m_Name: Moss
+  m_EditorClassIdentifier: Assembly-CSharp::PlantStage
+  stages:
+  - {fileID: -855298285791758126, guid: b3e1742baed3e2548898f895b809d37d, type: 3}
+  - {fileID: 6937817954938267909, guid: 267b1e3e1eb489a4ea19eea7d3ebf34e, type: 3}
+  - {fileID: -6470460504253458178, guid: 891487f0b92367645b50304a6239d7b8, type: 3}
+  - {fileID: -4178046375966092550, guid: 15412e3f638e5e44ab8f7c36b4657fb6, type: 3}

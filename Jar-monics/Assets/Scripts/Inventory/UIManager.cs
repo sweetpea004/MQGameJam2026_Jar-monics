@@ -6,7 +6,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject seedPanel;
     [SerializeField] GameObject plantPanel;
     [SerializeField] GameObject bottlePanel;
-
+    [SerializeField] private GameObject plantPrefab;
     [SerializeField] private GameObject blankSpawner;
     // [SerializeField] private PlantStages[] allPlants;
     [SerializeField] private GameObject demoParentRoom;
@@ -126,7 +126,6 @@ public class UIManager : MonoBehaviour
                 continue;
             }
             Plant script = item.GetItem as Plant;
-            GameObject plantPrefab = script.StageSprites.stages[script.GetStage];
 
             ItemSpawner sp = blankSpawner.GetComponent<ItemSpawner>();
             sp.SetSpawned(plantPrefab);

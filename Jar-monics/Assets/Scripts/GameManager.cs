@@ -2,6 +2,7 @@ using UnityEngine;
 using System;
 using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(InventorySystem))]
 public class GameManager : MonoBehaviour
 {
     private static GameManager singleton;
