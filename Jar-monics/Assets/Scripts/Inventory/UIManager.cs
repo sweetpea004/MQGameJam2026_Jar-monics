@@ -3,6 +3,8 @@ using UnityEngine;
 public class UIManager : MonoBehaviour
 {
     [SerializeField] GameObject seedPanel;
+    [SerializeField] GameObject plantPanel;
+    [SerializeField] GameObject bottlePanel;
 
     private static UIManager singleton;
     public static UIManager Instance
@@ -31,20 +33,27 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         GameManager.Instance.screenTransition += ToggleUI;
-        seedPanel.SetActive(false);
+        currentTab = FindAnyObjectByType<Tab>();
+        if (currentTab != null)
+        {
+            currentTab.GetButton.interactable = false;
+            ShowHideTabs(currentTab);
+        }
+
     }
 
 
     void ToggleUI(Room room)
     {
         Debug.Log("room " + room);
-        seedPanel.SetActive(room.GetScreenType == Screen.GARDEN);
+        // seedPanel.SetActive(room.GetScreenType == Screen.GARDEN);
     }
 
     private Tab currentTab;
     public void ChangeTab(Tab tab)
     {
-        Debug.Log("Changing tab" + tab.GetTab);
+        // Debug.Log("Changing tab" + tab.GetTab);
+
         if (currentTab != null)
         {
             currentTab.GetButton.interactable = true;
@@ -53,15 +62,24 @@ public class UIManager : MonoBehaviour
         currentTab = tab;
 
 
+        ShowHideTabs(tab);
+    }
+
+    private void ShowHideTabs(Tab tab)
+    {
         seedPanel.SetActive(false);
+        plantPanel.SetActive(false);
+        bottlePanel.SetActive(false);
         switch (tab.GetTab)
         {
             case TabCategory.SEED:
                 seedPanel.SetActive(true);
                 break;
             case TabCategory.PLANT:
+                plantPanel.SetActive(true);
                 break;
             case TabCategory.BOTTLE:
+                bottlePanel.SetActive(true);
                 break;
             case TabCategory.UNASSIGNED:
                 Debug.LogError("Unassigned tab" + tab);
