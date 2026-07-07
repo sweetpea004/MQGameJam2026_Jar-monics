@@ -2,7 +2,7 @@ using UnityEngine;
 using System;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(InventorySystem))]
+[RequireComponent(typeof(InventorySystem), typeof(SOManager))]
 public class GameManager : MonoBehaviour
 {
     private static GameManager singleton;
@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
     {
         get => currentRoom;
     }
-    public Action<Item> OnItemStartedDragging;
+
     // public delegate void ScreenTransitionEventHandler();
     // public event ScreenTransitionEventHandler OnScreenTransition;
 
@@ -67,6 +67,11 @@ public class GameManager : MonoBehaviour
         MoveMouse = actions.Player.Move;
 
         cam = Camera.main;
+
+        foreach(Room r in rooms)
+        {
+            r.gameObject.SetActive(false);
+        }
     }
 
     private void Start()
@@ -87,7 +92,10 @@ public class GameManager : MonoBehaviour
 
     void UpdateCurrentRoom(Room room)
     {
+        currentRoom?.gameObject.SetActive(false);
         currentRoom = room;
+        currentRoom?.gameObject.SetActive(true);
+
     }
 
     private void Update()

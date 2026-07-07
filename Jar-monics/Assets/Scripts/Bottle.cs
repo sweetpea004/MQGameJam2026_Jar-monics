@@ -26,9 +26,9 @@ public class Bottle : Item
     public void AddPlant(GameObject o)
     {
         occupants++;
-        for(int i = 0; i < occupancies.Length; i++)
+        for (int i = 0; i < occupancies.Length; i++)
         {
-            if(occupancies[i] == false)
+            if (occupancies[i] == false)
             {
                 occupancies[i] = true;
                 o.transform.parent = gameObject.transform;
@@ -50,7 +50,11 @@ public class Bottle : Item
 
     public override void OnItemReleased()
     {
-        transform.localScale = GetLastPoint.transform.localScale * 2;
+        base.OnItemReleased();
+        if (GetLastPoint != null)
+        {
+            transform.localScale = GetLastPoint.transform.localScale * 2;
+        }
     }
     public override void OnItemSelected()
     {
