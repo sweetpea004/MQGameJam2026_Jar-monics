@@ -628,10 +628,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Foliage
   stages:
-  - {fileID: -855298285791758126, guid: 37c7141abfdf1f20f9411d63267fb363, type: 3}
-  - {fileID: 6937817954938267909, guid: 237b33c9a6f90a11da40b6fa54672064, type: 3}
-  - {fileID: 1090376217813512402, guid: 093d98744cf47c25d936a75a9699f90f, type: 3}
-  - {fileID: -3033962309406360609, guid: 9b1c389f22802519e95f047ee0c681be, type: 3}
+  - {fileID: -5382199391509058341, guid: dd6f17c096cf36d0e92196de12b6935c, type: 3}
+  - {fileID: 1732015861850713364, guid: 54aad7647569fe456b387b1f2ce99dff, type: 3}
+  - {fileID: 117119006023367679, guid: efc2d545c05582c7c83cfc1397463d20, type: 3}
+  - {fileID: 2653816373924519562, guid: 102845fb2d02ae18084427ecb510b175, type: 3}
 --- !u!4 &492896230
 Transform:
   m_ObjectHideFlags: 0

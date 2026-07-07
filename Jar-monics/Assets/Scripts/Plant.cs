@@ -9,7 +9,7 @@ public class Plant : Item
 
     [SerializeField] private int stage = 0;
     private int maxStage = 4; //All but two plants have 4 stages, the other two have had this value changed in Awake()
-    private bool isFoliageMaj;
+    [SerializeField] private bool isMaj = false;
     
 
     protected new void Awake()
@@ -45,13 +45,10 @@ public class Plant : Item
         SetSprite();
     }
 
-    public void Initialise(PlantType t, bool isMajor)
+    public void Init(PlantType t, bool isMajor)
     {
         type = t;
-        if(t == PlantType.Foliage)
-        {
-            isFoliageMaj = isMajor;
-        }
+        isMaj = isMajor;
     }
 
     void SetSprite()
@@ -74,7 +71,7 @@ public class Plant : Item
                 sprite.sprite = sprites.GetComponent<Moss>().Stages[stage];
                 break;
             case PlantType.Foliage:
-                if(stage < 2 || isFoliageMaj)
+                if(stage < 2 || isMaj)
                 {
                     sprite.sprite = sprites.GetComponent<Foliage>().Stages[stage];    
                 }
