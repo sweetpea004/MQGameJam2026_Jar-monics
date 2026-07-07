@@ -52,7 +52,7 @@ public class Plant : Item
         }
 
         sprite = gameObject.GetComponent<SpriteRenderer>();
-
+ 
         SetSprite();
     }
 
