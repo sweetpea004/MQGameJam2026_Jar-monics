@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 public class CameraController : MonoBehaviour
 {
 
+    [SerializeField] private float transitionSpeed = 10;
     [SerializeField] private Room startingRoom;
     [SerializeField] private Room currentRoom;
 
@@ -13,11 +14,13 @@ public class CameraController : MonoBehaviour
     private InputAction moveUp;
     private InputAction moveDown;
 
-    private void Awake(){
+    private void Awake()
+    {
         currentRoom = startingRoom;
     }
 
-    private void Start(){
+    private void Start()
+    {
         actions = new PlayerInput();
         moveLeft = actions.Camera.Left;
         moveRight = actions.Camera.Right;
@@ -27,35 +30,42 @@ public class CameraController : MonoBehaviour
         actions.Enable();
     }
 
-    private void Update(){
+    private void Update()
+    {
 
         moveInput();
         moveCamera();
 
     }
 
-    private void moveInput(){
-            if(moveLeft.WasPressedThisFrame()){
+    private void moveInput()
+    {
+        if (moveLeft.WasPressedThisFrame())
+        {
             currentRoom = currentRoom.GoLeft;
             GameManager.Instance.screenTransition?.Invoke(currentRoom);
         }
-        if(moveRight.WasPressedThisFrame()){
+        if (moveRight.WasPressedThisFrame())
+        {
             currentRoom = currentRoom.GoRight;
             GameManager.Instance.screenTransition?.Invoke(currentRoom);
         }
-        if(moveUp.WasPressedThisFrame()){
+        if (moveUp.WasPressedThisFrame())
+        {
             currentRoom = currentRoom.GoUp;
             GameManager.Instance.screenTransition?.Invoke(currentRoom);
         }
-        if(moveDown.WasPressedThisFrame()){
+        if (moveDown.WasPressedThisFrame())
+        {
             currentRoom = currentRoom.GoDown;
             GameManager.Instance.screenTransition?.Invoke(currentRoom);
         }
     }
 
-    private void moveCamera(){
-        
-        transform.position = new Vector3(currentRoom.GetX, currentRoom.GetY, transform.position.z);
+    private void moveCamera()
+    {
+        transform.position = Vector3.Lerp(transform.position, new Vector3(currentRoom.GetX, currentRoom.GetY, transform.position.z), transitionSpeed * Time.deltaTime);
+        Debug.Log(transform.position);
     }
 
 }

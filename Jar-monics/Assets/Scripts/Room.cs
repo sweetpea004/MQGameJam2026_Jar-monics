@@ -33,11 +33,28 @@ public GameObject GetPlayArea{
     get => playArea;
 }
 
-public float GetX{
-    get => transform.position.x;
-}
+    public Room GoUp
+    {
+        get => toUp ?? this;
+    }
 
-public float GetY{
-    get => transform.position.y;
-}
+    public Room GoDown
+    {
+        get => toDown ?? this;
+    }
+
+    public Screen GetScreenType
+    {
+        get => screenType;
+    }
+
+    public float GetX
+    {
+        get => transform.position.x;
+    }
+
+    public float GetY
+    {
+        get => transform.position.y;
+    }
 }
