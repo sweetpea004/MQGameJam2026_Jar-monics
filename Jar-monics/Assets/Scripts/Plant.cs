@@ -8,6 +8,10 @@ public class Plant : Item
     {
         get => type;
     }
+    public new string GetName
+    {
+        get => string.Format("{0}-Stage{1}", type, stage);
+    }
     private SpriteRenderer sprite;
 
     [SerializeField] private int stage = 0;
@@ -20,6 +24,7 @@ public class Plant : Item
 
         set
         {
+            Debug.Log("setting stage to " + value);
             stage = value;
         }
     }

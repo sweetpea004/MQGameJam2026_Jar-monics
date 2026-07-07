@@ -11,7 +11,7 @@ public class GardenPlot : MonoBehaviour
     }
     public GardenPlant GetPlant
     {
-        get => plant;
+        get => GetComponentInChildren<GardenPlant>();
     }
 
     private void Awake()

@@ -3,7 +3,16 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public class GardenPlant : MonoBehaviour
 {
-    [SerializeField] private int stage = 0;
+    private int stage = 0;
+    public int GetStage
+    {
+        get => stage;
+    }
+    public void SetStage(int value)
+    {
+        Debug.Log("GP set stage " + value);
+        stage = value;
+    }
     [SerializeField] private PlantType type;
     public void ChangeType(PlantType newType)
     {
@@ -36,21 +45,28 @@ public class GardenPlant : MonoBehaviour
         }
     }
 
-    private void AdvanceStage()
+    public void AdvanceStage()
     {
         PlantStage plant = SOManager.Instance.GetPlant(type);
-        stage++;
-        stage = Mathf.Min(stage, plant.MaxStages - 1);
-        Debug.Log(stage);
-        if (type == PlantType.Foliage && stage > 2)
+        SetStage(GetStage + 1);
+        SetStage(Mathf.Min(GetStage, plant.MaxStages - 1));
+        Debug.Log(GetStage);
+        if (type == PlantType.Foliage && GetStage > 2)
         {
-            stage = Random.Range(3, 4); //randomness
+            Debug.Log("random");
+            int value = Random.Range(3, 4); //randomness;
+            Debug.Log(value);
+            SetStage(value);
         }
-        renderer.sprite = plant.Stages[stage];
+        renderer.sprite = plant.Stages[GetStage];
     }
 
-    public Item GetItem()
+    public Plant GetItem()
     {
-        return SOManager.Instance.GetPlant(type).Prefab[stage].GetComponent<Plant>();
+        Debug.Log("st" + this.GetStage);
+        Plant plat = SOManager.Instance.GetPlant(type).Prefab[stage].GetComponent<Plant>();
+        Debug.Log("st" + this.stage);
+        plat.Stage = this.stage;
+        return plat;
     }
 }

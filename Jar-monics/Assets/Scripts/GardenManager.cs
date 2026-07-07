@@ -62,6 +62,7 @@ public class GardenManager : MonoBehaviour
     {
         GardenPlant plant = gardenPlant.GetComponent<GardenPlant>();
         plant.ChangeType(type);
+        
         plot.SetPlant(plant);
         Instantiate(gardenPlant, plot.transform.position, Quaternion.identity, plot.transform);
     }
@@ -77,8 +78,14 @@ public class GardenManager : MonoBehaviour
 
         if (type == ToolType.TROWEL)
         {
-            InventorySystem.Instance.AddItemOne(plot.GetPlant.GetItem());
+            Plant item = plot.GetPlant.GetItem();
+            Debug.Log("digging up " + plot.GetPlant.GetItem().GetName);
+            InventorySystem.Instance.AddItemOne(item);
             plot.RemovePlant();
+        }
+        if(type == ToolType.WATERINGCAN)
+        {
+            plot.GetPlant.AdvanceStage();
         }
     }
 }
