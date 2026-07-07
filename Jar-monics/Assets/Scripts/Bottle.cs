@@ -39,6 +39,22 @@ public class Bottle : Item
         }
     }
 
+    void PlayBottle()
+    {
+        foreach (Plant p in gameObject.GetComponentsInChildren<Plant>())
+        {
+            p.PlayMusic();
+        }
+    }
+
+    void StopBottle()
+    {
+        foreach (Plant p in gameObject.GetComponentsInChildren<Plant>())
+        {
+            p.StopMusic();
+        }
+    }
+
     void Start()
     {
     }

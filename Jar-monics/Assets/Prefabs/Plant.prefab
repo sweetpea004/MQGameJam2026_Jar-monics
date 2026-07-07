@@ -124,7 +124,7 @@ MonoBehaviour:
   lerpSpeed: 10
   lastPoint: {fileID: 0}
   stage: 0
-  isMaj: 0
+  tonality: 2
 --- !u!212 &6987284034254302042
 SpriteRenderer:
   serializedVersion: 2
@@ -199,7 +199,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

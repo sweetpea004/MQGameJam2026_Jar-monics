@@ -5,9 +5,9 @@ using UnityEngine;
 public class Plant : Item
 {
     private String plantTypeString;
-    private PlantType type;
+    [SerializeField] private PlantType type;
     private SpriteRenderer sprite;
-    private AudioSource audio;
+    private new AudioSource audio;
 
     [SerializeField] private int stage = 0;
     public int Stage
@@ -28,9 +28,6 @@ public class Plant : Item
 
     protected void Start()
     {
-        type = PlantType.Foliage;
-
-
         switch (type)
         {
             case PlantType.Fern:
@@ -57,6 +54,9 @@ public class Plant : Item
         audio = gameObject.GetComponent<AudioSource>();
  
         SetSprite();
+        SetMusic();
+
+        PlayMusic();
     }
 
     public void Init(PlantType t)
@@ -110,6 +110,16 @@ public class Plant : Item
                 audio.clip = SOManager.Instance.GetPlant(type).MinorTracks[stage];
                 break;
         }
+    }
+
+    public void PlayMusic()
+    {
+        audio.Play();
+    }
+
+    public void StopMusic()
+    {
+        audio.Stop();
     }
 
     void Grow()
