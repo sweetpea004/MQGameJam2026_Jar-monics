@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Moss
   m_EditorClassIdentifier: Assembly-CSharp::PlantStage
   stages:
+<<<<<<< HEAD
   - {fileID: -8411124513484026158, guid: 727323265b5d4ea46b3bcaaea1d0ed59, type: 3}
   - {fileID: -2048410178766304379, guid: 0a98c2d88029b43479c1329ec2e7f846, type: 3}
   - {fileID: 6319811441028266567, guid: 4a597b118e9a5984ebc20cb0f8df2642, type: 3}
@@ -22,3 +23,24 @@ MonoBehaviour:
   - {fileID: 682125075914555464, guid: 3f915484dec9b484280ade316e665b60, type: 3}
   - {fileID: 4657590669919698465, guid: f93e8305fc2e0c34989ebf5d1a38f668, type: 3}
   - {fileID: 310978703405728833, guid: eb4b581c2078eb24a9d88f484af60e2f, type: 3}
+=======
+  - {fileID: -855298285791758126, guid: b3e1742baed3e2548898f895b809d37d, type: 3}
+  - {fileID: 6937817954938267909, guid: 267b1e3e1eb489a4ea19eea7d3ebf34e, type: 3}
+  - {fileID: -6470460504253458178, guid: 891487f0b92367645b50304a6239d7b8, type: 3}
+  - {fileID: -4178046375966092550, guid: 15412e3f638e5e44ab8f7c36b4657fb6, type: 3}
+  minorTracks:
+  - {fileID: 8300000, guid: 30ff48237ad808f36b9e575fde03e563, type: 3}
+  - {fileID: 8300000, guid: 2cda73326b1f1e815879782402e19958, type: 3}
+  - {fileID: 8300000, guid: ceaee5b1074c52c0e8342627cfb374f3, type: 3}
+  - {fileID: 8300000, guid: 27fb2a3d237e681ffb4b8919ba5e6079, type: 3}
+  neutralTracks:
+  - {fileID: 8300000, guid: 10400a905f50cbf71982abc825d01803, type: 3}
+  - {fileID: 8300000, guid: f478809363eb406a786f5abfc3f9673c, type: 3}
+  - {fileID: 8300000, guid: 2ea493ebd16af4d3dbe7a89ef83927e9, type: 3}
+  - {fileID: 8300000, guid: 9f4b86ae7e8975aa686609010b1647a1, type: 3}
+  majorTracks:
+  - {fileID: 8300000, guid: b71d415be97f293acb317a0393d87698, type: 3}
+  - {fileID: 8300000, guid: 76a0bea93a031fea2bae5c6a655be731, type: 3}
+  - {fileID: 8300000, guid: c6d3401d7cb7756f58d8c4f7f335e799, type: 3}
+  - {fileID: 8300000, guid: 122f169698535a42db4be9f3a5ff2145, type: 3}
+>>>>>>> 1bc4d69 (Added Major, Minor and Neutral track sets for each plant type)

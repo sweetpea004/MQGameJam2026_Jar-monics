@@ -15,6 +15,7 @@ MonoBehaviour:
   stages:
   - {fileID: 7536458381352112627, guid: 458378df980246e458d2a3378fd842e4, type: 3}
   - {fileID: -8728439389244122734, guid: a84217b6193304b45bbd808cf64f65fe, type: 3}
+<<<<<<< HEAD
   - {fileID: -9105386156181285351, guid: 3ee3fa6d463e4324b99176cf1dd4431a, type: 3}
   - {fileID: -1568637543657111260, guid: 3f0f11d7a26309743bf6f2b13a0dcb8a, type: 3}
   prefabs:
@@ -22,3 +23,22 @@ MonoBehaviour:
   - {fileID: 68068872354243741, guid: 9ca43712b7305ce4b8b90164b65e99a3, type: 3}
   - {fileID: 824717386378274957, guid: 77ac8770e78973e41b1b95ba8b7b2f01, type: 3}
   - {fileID: 2609595265687421782, guid: a8d714462dfaf714b816912ce949ea8a, type: 3}
+=======
+  - {fileID: 1090376217813512402, guid: e0332b06fe6a15b418ff6af5191f8f78, type: 3}
+  - {fileID: -3033962309406360609, guid: 32809b774c615ff488418610b52c1e60, type: 3}
+  minorTracks:
+  - {fileID: 8300000, guid: 6118991506340e79fa02983c80ea2036, type: 3}
+  - {fileID: 8300000, guid: f420e0efda5a06b66ba7061ec3af4679, type: 3}
+  - {fileID: 8300000, guid: 810e9a8836c9ec751b37b21c42a6abac, type: 3}
+  - {fileID: 8300000, guid: 810e9a8836c9ec751b37b21c42a6abac, type: 3}
+  neutralTracks:
+  - {fileID: 8300000, guid: 6118991506340e79fa02983c80ea2036, type: 3}
+  - {fileID: 8300000, guid: f420e0efda5a06b66ba7061ec3af4679, type: 3}
+  - {fileID: 8300000, guid: 5ee86f91bbd05d77dbe70859be3c5852, type: 3}
+  - {fileID: 8300000, guid: 810e9a8836c9ec751b37b21c42a6abac, type: 3}
+  majorTracks:
+  - {fileID: 8300000, guid: 6118991506340e79fa02983c80ea2036, type: 3}
+  - {fileID: 8300000, guid: f420e0efda5a06b66ba7061ec3af4679, type: 3}
+  - {fileID: 8300000, guid: 5ee86f91bbd05d77dbe70859be3c5852, type: 3}
+  - {fileID: 8300000, guid: 5ee86f91bbd05d77dbe70859be3c5852, type: 3}
+>>>>>>> 1bc4d69 (Added Major, Minor and Neutral track sets for each plant type)
