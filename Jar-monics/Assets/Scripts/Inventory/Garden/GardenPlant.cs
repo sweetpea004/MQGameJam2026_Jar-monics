@@ -18,6 +18,10 @@ public class GardenPlant : MonoBehaviour
     {
         type = newType;
     }
+    public PlantType GetPlantType
+    {
+        get => type;
+    }
     private new SpriteRenderer renderer;
     private BoxCollider2D box;
 
@@ -63,10 +67,11 @@ public class GardenPlant : MonoBehaviour
 
     public Plant GetItem()
     {
-        Debug.Log("st" + this.GetStage);
+
         Plant plat = SOManager.Instance.GetPlant(type).Prefab.GetComponent<Plant>();
-        Debug.Log("st" + this.stage);
-        plat.Stage = this.stage;
+        plat.PlantName = string.Format("{0}-Stage{1}", type, stage);
+        plat.Type = type;
+        plat.Stage = stage;
         return plat;
     }
 }

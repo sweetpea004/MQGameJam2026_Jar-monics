@@ -6,6 +6,7 @@ public class ItemSpawner : MonoBehaviour
     [SerializeField] private GameObject spawned;
     public void SetSpawned(GameObject obj)
     {
+        GetComponentInChildren<UnityEngine.UI.Image>().sprite = spawned.GetComponent<SpriteRenderer>().sprite;
         spawned = obj;
     }
     [SerializeField] private GameObject parentRoom;

@@ -79,7 +79,9 @@ public class GardenManager : MonoBehaviour
         if (type == ToolType.TROWEL)
         {
             Plant item = plot.GetPlant.GetItem();
-            Debug.Log("digging up " + plot.GetPlant.GetItem().GetName);
+            item.Init(plot.GetPlant.GetPlantType);
+            item.name = item.PlantName;
+            Debug.Log("digging up " + item.name);
             InventorySystem.Instance.AddItemOne(item);
             plot.RemovePlant();
         }

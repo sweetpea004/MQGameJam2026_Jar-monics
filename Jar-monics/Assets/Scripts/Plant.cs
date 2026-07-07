@@ -12,6 +12,17 @@ public class Plant : Item
         {
             return type;
         }
+        set
+        {
+            type = value;
+        }
+    }
+    [SerializeField] private string plantName;
+    public string PlantName
+    {
+        get => plantName;
+        set => plantName = value;
+
     }
     private SpriteRenderer sprite;
     private AudioSource audio;
@@ -39,20 +50,11 @@ public class Plant : Item
         switch (type)
         {
             case PlantType.Fern:
-                plantTypeString = "Fern";
+            case PlantType.Cactus:
+            case PlantType.Moss:
                 break;
             case PlantType.Succulent:
-                plantTypeString = "Succulent";
-                maxStage = 3;
-                break;
-            case PlantType.Cactus:
-                plantTypeString = "Cactus";
-                break;
-            case PlantType.Moss:
-                plantTypeString = "Moss";
-                break;
             case PlantType.Foliage:
-                plantTypeString = "Foliage";
                 maxStage = 3;
 
                 break;
@@ -60,7 +62,7 @@ public class Plant : Item
 
         sprite = gameObject.GetComponent<SpriteRenderer>();
         audio = gameObject.GetComponent<AudioSource>();
- 
+
         SetSprite();
         SetMusic();
     }
@@ -68,6 +70,7 @@ public class Plant : Item
     public void Init(PlantType t)
     {
         type = t;
+        Start();
     }
 
     void SetSprite()
@@ -146,7 +149,6 @@ public class Plant : Item
     // Update is called once per frame
     protected new void Update()
     {
-
     }
     public override void OnItemSelected()
     {
