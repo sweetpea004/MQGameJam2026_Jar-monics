@@ -4,7 +4,7 @@ using UnityEngine;
 public class ItemSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject spawned;
-    [SerializeField] private GameObject parent;
+    [SerializeField] private GameObject parentRoom;
     private BoxCollider2D box; 
 
     private void Awake(){
@@ -18,7 +18,7 @@ public class ItemSpawner : MonoBehaviour
         if (GameManager.Instance.ClickMouse.WasPressedThisFrame() && box.OverlapPoint(GameManager.Instance.WorldMousePos))
         {
             //do stuff
-            GameObject obj = Instantiate(spawned, GameManager.Instance.WorldMousePos, Quaternion.identity, transform);
+            GameObject obj = Instantiate(spawned, GameManager.Instance.WorldMousePos, Quaternion.identity, parentRoom.transform);
             Seed seed = obj.GetComponent<Seed>();
             seed.SetDragging(true);
 

@@ -14,12 +14,12 @@ public class Item : MonoBehaviour
     }
 
 
-    void Awake()
+   protected void Awake()
     {
         box = GetComponent<BoxCollider2D>();
     }
     
-    void Update()
+    protected void Update()
     {
         DraggingItem();
         // Debug.Log(isDragged);

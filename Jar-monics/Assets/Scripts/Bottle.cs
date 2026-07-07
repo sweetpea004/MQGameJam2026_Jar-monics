@@ -15,7 +15,7 @@ public class Bottle : Item
         type = BottleType.Clear;
     }
 
-    void Start()
+    protected void Start()
     {
     }
 
