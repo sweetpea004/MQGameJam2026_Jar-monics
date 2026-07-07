@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3390206121820542559}
   - component: {fileID: 4749393082913166462}
   - component: {fileID: 4145708794149955694}
+  - component: {fileID: 4521578945466490603}
   m_Layer: 0
   m_Name: FernStage (1)
   m_TagString: Untagged
@@ -68,7 +69,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.25}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -92,7 +93,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cf37d5f8dd342343b56c5db825b2d1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Plant
+  lerpSpeed: 10
   lastPoint: {fileID: 0}
+  shouldLerpToPoint: 1
+  stage: 0
+  isMaj: 0
+--- !u!50 &4521578945466490603
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9023333504155594333}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &4338245426877005977
 PrefabInstance:
   m_ObjectHideFlags: 0

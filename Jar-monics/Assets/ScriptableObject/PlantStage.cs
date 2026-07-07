@@ -14,6 +14,11 @@ public class PlantStage : ScriptableObject
     {
         get => stages;
     }
+<<<<<<< HEAD
+    public GameObject[] Prefab
+    {
+        get => prefabs;
+=======
 
     [SerializeField] private AudioClip[] minorTracks = new AudioClip[4];
     public AudioClip[] MinorTracks
@@ -31,5 +36,6 @@ public class PlantStage : ScriptableObject
     public AudioClip[] MajorTracks
     {
         get => majorTracks;
+>>>>>>> 1bc4d69 (Added Major, Minor and Neutral track sets for each plant type)
     }
 }   
