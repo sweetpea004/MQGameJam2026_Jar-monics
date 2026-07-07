@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: baf48c0537cea573a9159d6953863ca7
+guid: d064d9391a06e1bcb907177203223ccb
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -127,9 +127,9 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: fern-4
+  - name: dirt-patch
     originalName: 
-    pivot: {x: 0.5166667, y: 0}
+    pivot: {x: 0.5, y: -0.04761905}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -138,8 +138,8 @@ ScriptedImporter:
       x: 4
       y: 4
       width: 60
-      height: 64
-    spriteID: dd7f09f74c4a413e29fe402505a7fe94
+      height: 21
+    spriteID: 89c0a3ca022f4ba2fb519ac68d5d5df5
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -153,25 +153,25 @@ ScriptedImporter:
   asepriteLayers:
   - layerIndex: 0
     uuid:
-      value0: 3506047198
+      value0: 1983146336
       value1: 0
       value2: 0
       value3: 0
     guid: 0
-    name: fern-4
+    name: dirt-patch
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: fern-4
+    - name: dirt-patch
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 1
-        y: 0
+        x: 2
+        y: 1
         width: 60
-        height: 64
-      spriteId: dd7f09f74c4a413e29fe402505a7fe94
+        height: 21
+      spriteId: 89c0a3ca022f4ba2fb519ac68d5d5df5
     linkedCells: []
     tileCells: []
     tileSetIndex: 0
@@ -182,4 +182,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 64, y: 64}
-  previousTextureSize: {x: 128, y: 128}
+  previousTextureSize: {x: 128, y: 32}

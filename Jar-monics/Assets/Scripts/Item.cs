@@ -91,6 +91,7 @@ public class Item : MonoBehaviour
             }
             isDragged = false;
             lastPoint.Occupant = this;
+            transform.localScale = lastPoint.transform.localScale * 2;
         }
     }
 }

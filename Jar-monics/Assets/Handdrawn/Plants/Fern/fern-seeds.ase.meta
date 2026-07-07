@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5e394f0609023e58a9fab42ba2930ceb
+guid: a7bec503d9d5a753eae3bc0c9d0a4058
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -127,7 +127,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: succulent-seeds
+  - name: fern-seeds
     originalName: 
     pivot: {x: 0.4814815, y: -0.078431375}
     alignment: 9
@@ -139,7 +139,7 @@ ScriptedImporter:
       y: 4
       width: 54
       height: 51
-    spriteID: 8db6cfc36611795eaba7bf4661bd49f9
+    spriteID: 8a49c66f40ad2d06e87f52c2e8319075
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -153,17 +153,17 @@ ScriptedImporter:
   asepriteLayers:
   - layerIndex: 0
     uuid:
-      value0: 3808008101
+      value0: 1224285236
       value1: 0
       value2: 0
       value3: 0
     guid: 0
-    name: succulent-seeds
+    name: fern-seeds
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: succulent-seeds
+    - name: fern-seeds
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -171,7 +171,7 @@ ScriptedImporter:
         y: 4
         width: 54
         height: 51
-      spriteId: 8db6cfc36611795eaba7bf4661bd49f9
+      spriteId: 8a49c66f40ad2d06e87f52c2e8319075
     linkedCells: []
     tileCells: []
     tileSetIndex: 0

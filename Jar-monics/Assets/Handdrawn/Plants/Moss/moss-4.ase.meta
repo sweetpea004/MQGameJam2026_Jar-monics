@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 415de4f8cfcd23037aeda6b09fa3a1a8
+guid: 8584b8b4742a4f1e2bf48d796e27c0a9
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -127,9 +127,9 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: fern-1
+  - name: moss-4
     originalName: 
-    pivot: {x: 0.45454547, y: 0}
+    pivot: {x: 0.50980395, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -137,9 +137,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 11
-      height: 13
-    spriteID: 4c35b69fd5189f77ea057b9fa667c06a
+      width: 51
+      height: 18
+    spriteID: fc102119bf2a1e9768f44d90bcaa66b0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -153,25 +153,25 @@ ScriptedImporter:
   asepriteLayers:
   - layerIndex: 0
     uuid:
-      value0: 2746532311
+      value0: 2093977463
       value1: 0
       value2: 0
       value3: 0
     guid: 0
-    name: fern-1
+    name: moss-4
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: fern-1
+    - name: moss-4
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 27
+        x: 6
         y: 0
-        width: 11
-        height: 13
-      spriteId: 4c35b69fd5189f77ea057b9fa667c06a
+        width: 51
+        height: 18
+      spriteId: fc102119bf2a1e9768f44d90bcaa66b0
     linkedCells: []
     tileCells: []
     tileSetIndex: 0
@@ -182,4 +182,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 64, y: 64}
-  previousTextureSize: {x: 32, y: 32}
+  previousTextureSize: {x: 64, y: 32}

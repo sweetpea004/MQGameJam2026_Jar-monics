@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 34f055bf6a6d2af92b1b669dd5eb9f4e
+guid: ca2b5cc8905a547d7aa3eeac18689f9c
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -127,9 +127,9 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: foliage-seeds
+  - name: fern-1
     originalName: 
-    pivot: {x: 0.4814815, y: -0.078431375}
+    pivot: {x: 0.45454547, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -137,9 +137,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 54
-      height: 51
-    spriteID: 010abad333453fab78ff2278cafaede8
+      width: 11
+      height: 13
+    spriteID: 5a26e40b0e17231ae9decbe55ceaade1
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -153,25 +153,25 @@ ScriptedImporter:
   asepriteLayers:
   - layerIndex: 0
     uuid:
-      value0: 714309206
+      value0: 2746532311
       value1: 0
       value2: 0
       value3: 0
     guid: 0
-    name: foliage-seeds
+    name: fern-1
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: foliage-seeds
+    - name: fern-1
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 6
-        y: 4
-        width: 54
-        height: 51
-      spriteId: 010abad333453fab78ff2278cafaede8
+        x: 27
+        y: 0
+        width: 11
+        height: 13
+      spriteId: 5a26e40b0e17231ae9decbe55ceaade1
     linkedCells: []
     tileCells: []
     tileSetIndex: 0
@@ -182,4 +182,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 64, y: 64}
-  previousTextureSize: {x: 64, y: 64}
+  previousTextureSize: {x: 32, y: 32}

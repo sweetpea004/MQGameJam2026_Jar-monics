@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 920c4790adb0d975ab7bedec7ac24902
+guid: 74cb2d8b61dcd636a80e87aa361ebf6a
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -127,9 +127,9 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: cactus-seeds
+  - name: inventory-icon-plant-hovered
     originalName: 
-    pivot: {x: 0.4814815, y: -0.078431375}
+    pivot: {x: 0.5, y: -1.2105263}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -137,9 +137,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 54
-      height: 51
-    spriteID: a653797ef52b44a94a85798f2d5f687a
+      width: 20
+      height: 19
+    spriteID: 7720de44312562084b213bb03ac40fdf
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -153,25 +153,25 @@ ScriptedImporter:
   asepriteLayers:
   - layerIndex: 0
     uuid:
-      value0: 3481279098
+      value0: 149805666
       value1: 0
       value2: 0
       value3: 0
     guid: 0
-    name: cactus-seeds
+    name: inventory-icon-plant-hovered
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: cactus-seeds
+    - name: inventory-icon-plant-hovered
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 6
-        y: 4
-        width: 54
-        height: 51
-      spriteId: a653797ef52b44a94a85798f2d5f687a
+        x: 22
+        y: 23
+        width: 20
+        height: 19
+      spriteId: 7720de44312562084b213bb03ac40fdf
     linkedCells: []
     tileCells: []
     tileSetIndex: 0
@@ -182,4 +182,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 64, y: 64}
-  previousTextureSize: {x: 64, y: 64}
+  previousTextureSize: {x: 32, y: 32}
