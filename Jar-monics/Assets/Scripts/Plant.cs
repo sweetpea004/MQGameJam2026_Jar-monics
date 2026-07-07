@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Plant : Item
@@ -6,6 +7,7 @@ public class Plant : Item
     private String plantTypeString;
     private PlantType type;
     private SpriteRenderer sprite;
+    private AudioSource audio;
 
     [SerializeField] private int stage = 0;
     public int Stage
@@ -21,7 +23,7 @@ public class Plant : Item
         }
     }
     private int maxStage = 4; //All but two plants have 4 stages, the other two have had this value changed in Awake()
-    [SerializeField] private bool isMaj = false;
+    [SerializeField] private Tonality tonality = Tonality.Neutral;
 
 
     protected void Start()
@@ -52,21 +54,18 @@ public class Plant : Item
         }
 
         sprite = gameObject.GetComponent<SpriteRenderer>();
+        audio = gameObject.GetComponent<AudioSource>();
  
         SetSprite();
     }
 
-    public void Init(PlantType t, bool isMajor)
+    public void Init(PlantType t)
     {
         type = t;
-        isMaj = isMajor;
     }
 
     void SetSprite()
     {
-
-        GameObject sprites = GameObject.Find(plantTypeString);
-
         switch (type)
         {
             case PlantType.Fern:
@@ -82,7 +81,7 @@ public class Plant : Item
                 sprite.sprite = SOManager.Instance.GetPlant(type).Stages[stage];
                 break;
             case PlantType.Foliage:
-                if (stage < 2 || isMaj)
+                if (stage < 2 || tonality == Tonality.Neutral || tonality == Tonality.Major)
                 {
                     sprite.sprite = SOManager.Instance.GetPlant(type).Stages[stage];
                 }
@@ -91,6 +90,24 @@ public class Plant : Item
                     sprite.sprite = SOManager.Instance.GetPlant(type).Stages[stage + 1];
                 }
 
+                break;
+        }
+    }
+
+    void SetMusic()
+    {
+        switch (tonality)
+        {
+            case Tonality.Major:
+                audio.clip = SOManager.Instance.GetPlant(type).MajorTracks[stage];
+                break;
+
+            case Tonality.Neutral:
+                audio.clip = SOManager.Instance.GetPlant(type).NeutralTracks[stage];
+                break;
+
+            case Tonality.Minor:
+                audio.clip = SOManager.Instance.GetPlant(type).MinorTracks[stage];
                 break;
         }
     }

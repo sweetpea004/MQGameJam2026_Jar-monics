@@ -17,3 +17,18 @@ MonoBehaviour:
   - {fileID: 6937817954938267909, guid: f8ba87860437c1f4bb9999b0da8c33c6, type: 3}
   - {fileID: -6470460504253458178, guid: 376aa823056845441aa5155d5f4effaa, type: 3}
   - {fileID: -4178046375966092550, guid: 0b850388a76dc9741b1384255d1aefc2, type: 3}
+  minorTracks:
+  - {fileID: 8300000, guid: 4c9569367754864a78dccac52d3b135b, type: 3}
+  - {fileID: 8300000, guid: 9c488b464d63d1285a511e8b8ce86708, type: 3}
+  - {fileID: 8300000, guid: 3ccc8402885f88b41a9807bf988544fc, type: 3}
+  - {fileID: 8300000, guid: 67bbc09aa6f3425aea5946adb7e19073, type: 3}
+  neutralTracks:
+  - {fileID: 8300000, guid: 8d46f75577bbf2f52a233748591013a2, type: 3}
+  - {fileID: 8300000, guid: fa9f6c4834e1016a18acfebb0c940791, type: 3}
+  - {fileID: 8300000, guid: 0c0c8caacd13c0c8e99527949b727d2d, type: 3}
+  - {fileID: 8300000, guid: 3e335fe30376a93d4be6bf80dba6a736, type: 3}
+  majorTracks:
+  - {fileID: 8300000, guid: a172784fd5d7424f3a12b77233884e79, type: 3}
+  - {fileID: 8300000, guid: 222d69a58b28f8d839ed50370956310c, type: 3}
+  - {fileID: 8300000, guid: 278b8fc2715639dd0bbcd308241095bd, type: 3}
+  - {fileID: 8300000, guid: 3790b8238e966747d984c7a11090c390, type: 3}

@@ -8,4 +8,22 @@ public class PlantStage : ScriptableObject
     {
         get => stages;
     }
+
+    [SerializeField] private AudioClip[] minorTracks = new AudioClip[4];
+    public AudioClip[] MinorTracks
+    {
+        get => minorTracks;
+    }
+
+    [SerializeField] private AudioClip[] neutralTracks = new AudioClip[4];
+    public AudioClip[] NeutralTracks
+    {
+        get => neutralTracks;
+    }
+
+    [SerializeField] private AudioClip[] majorTracks = new AudioClip[4];
+    public AudioClip[] MajorTracks
+    {
+        get => majorTracks;
+    }
 }   
