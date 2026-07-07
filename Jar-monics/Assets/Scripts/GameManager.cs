@@ -68,10 +68,10 @@ public class GameManager : MonoBehaviour
 
         cam = Camera.main;
 
-        foreach(Room r in rooms)
-        {
-            r.gameObject.SetActive(false);
-        }
+        // foreach(Room r in rooms)
+        // {
+        //     r.gameObject.SetActive(false);
+        // }
     }
 
     private void Start()
@@ -92,9 +92,9 @@ public class GameManager : MonoBehaviour
 
     void UpdateCurrentRoom(Room room)
     {
-        currentRoom?.gameObject.SetActive(false);
+        // currentRoom?.gameObject.SetActive(false);
         currentRoom = room;
-        currentRoom?.gameObject.SetActive(true);
+        // currentRoom?.gameObject.SetActive(true);
 
     }
 

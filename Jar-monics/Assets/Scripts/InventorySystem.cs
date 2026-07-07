@@ -134,6 +134,7 @@ public class InventorySystem : MonoBehaviour
 
   private ItemElement CreateItemElement(Item item)
   {
+    Debug.Log(item);
     ItemElement[] items = GetInventoryTab(item);
     if (items == null)
     {

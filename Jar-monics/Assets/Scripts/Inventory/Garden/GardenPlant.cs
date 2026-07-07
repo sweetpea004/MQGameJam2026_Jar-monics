@@ -39,7 +39,9 @@ public class GardenPlant : MonoBehaviour
     private void AdvanceStage()
     {
         PlantStage plant = SOManager.Instance.GetPlant(type);
-        stage = Mathf.Min(stage++, plant.MaxStages);
+        stage++;
+        stage = Mathf.Min(stage, plant.MaxStages - 1);
+        Debug.Log(stage);
         if (type == PlantType.Foliage && stage > 2)
         {
             stage = Random.Range(3, 4); //randomness
