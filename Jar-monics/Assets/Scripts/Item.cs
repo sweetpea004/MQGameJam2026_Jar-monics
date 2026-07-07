@@ -7,14 +7,21 @@ using UnityEngine;
 public abstract class Item : MonoBehaviour
 {
     private BoxCollider2D box;
-
-
+    private string itemName;
+    public string GetName
+    {
+        get => itemName;
+    }
     private bool isDragged = false;
-    protected bool isInfinite = false;
+    private bool isInfinite = false;
 
     public void SetInfinity(bool value)
     {
         isInfinite = value;
+    }
+    public bool GetInfinity
+    {
+        get => isInfinite;
     }
 
     private Vector3 mousePos;
@@ -52,6 +59,7 @@ public abstract class Item : MonoBehaviour
     {
         box = GetComponent<BoxCollider2D>();
 
+        itemName = gameObject.name;
 
     }
 

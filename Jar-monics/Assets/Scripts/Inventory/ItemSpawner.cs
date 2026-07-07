@@ -11,7 +11,10 @@ public class ItemSpawner : MonoBehaviour
     private void Awake()
     {
         box = GetComponent<BoxCollider2D>();
-
+        if (spawned.GetComponent<Item>() == null)
+        {
+            Debug.LogError("cannot spawn this object");
+        }
     }
     private void Start()
     {
@@ -27,9 +30,16 @@ public class ItemSpawner : MonoBehaviour
         {
             //do stuff
             GameObject obj = Instantiate(spawned, GameManager.Instance.WorldMousePos, Quaternion.identity, parentRoom.transform);
-            Seed seed = obj.GetComponent<Seed>();
-            seed.SetDragging(true);
-            seed.SetLastPoint(point);
+            Item item = obj.GetComponent<Item>();
+            item.SetDragging(true);
+            item.SetLastPoint(point);
+
+            if (item.GetInfinity)
+            {
+                return;
+            }
+
+            InventorySystem.Instance.RemoveItemOne(item);
             // obj.transform.position = Vector3.zero;
         }
     }
