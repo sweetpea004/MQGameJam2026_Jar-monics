@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Foliage
   m_EditorClassIdentifier: Assembly-CSharp::PlantStage
   stages:
-  - {fileID: -5382199391509058341, guid: dd6f17c096cf36d0e92196de12b6935c, type: 3}
-  - {fileID: 1732015861850713364, guid: 54aad7647569fe456b387b1f2ce99dff, type: 3}
-  - {fileID: 117119006023367679, guid: efc2d545c05582c7c83cfc1397463d20, type: 3}
-  - {fileID: 2653816373924519562, guid: 102845fb2d02ae18084427ecb510b175, type: 3}
+  - {fileID: -855298285791758126, guid: a81b1ef1ef7c2af44901894f5c504ada, type: 3}
+  - {fileID: 6937817954938267909, guid: 9253d2daf0724b04c80a4d61f7199b4a, type: 3}
+  - {fileID: 1090376217813512402, guid: e0332b06fe6a15b418ff6af5191f8f78, type: 3}
+  - {fileID: -3033962309406360609, guid: 32809b774c615ff488418610b52c1e60, type: 3}

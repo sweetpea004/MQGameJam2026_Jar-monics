@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Succulent
   m_EditorClassIdentifier: Assembly-CSharp::PlantStage
   stages:
-  - {fileID: -855298285791758126, guid: 67da78902dcaef2d197572f2dcc26420, type: 3}
-  - {fileID: 6937817954938267909, guid: eedde9633df712119bd3ba4052958b73, type: 3}
-  - {fileID: -6470460504253458178, guid: 1938907f445accde1bf03d0bf7917554, type: 3}
+  - {fileID: -855298285791758126, guid: aeb21db13b24a06419b4feff9dd7c858, type: 3}
+  - {fileID: 6937817954938267909, guid: a56af4330a319ce4a8c37482d99ef033, type: 3}
+  - {fileID: -6470460504253458178, guid: 1a9d18ea27f2e07428a5a4f1cf17e05b, type: 3}

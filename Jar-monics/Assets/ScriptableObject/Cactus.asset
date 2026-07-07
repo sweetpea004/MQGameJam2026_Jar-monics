@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Cactus
   m_EditorClassIdentifier: Assembly-CSharp::PlantStage
   stages:
-  - {fileID: -855298285791758126, guid: 235d5697a5b82d86ab2bcb84c203b65c, type: 3}
-  - {fileID: 6937817954938267909, guid: 6f1a0f299a0648e61a02603cd72807f5, type: 3}
-  - {fileID: -6470460504253458178, guid: 477689846e7c455058ae3a7f6edfb1c2, type: 3}
-  - {fileID: -4178046375966092550, guid: 6dc9337a1241bf409b520eceec107ef1, type: 3}
+  - {fileID: -855298285791758126, guid: 84112fa86f5f71b4380edc0d65c9f6e1, type: 3}
+  - {fileID: 6937817954938267909, guid: b74de6af9b6b28a4c8139f9c1b11577f, type: 3}
+  - {fileID: -6470460504253458178, guid: 41345e87f7e8a314096a7e17bfa89f9d, type: 3}
+  - {fileID: -4178046375966092550, guid: 414efbb6b67e1b64fac680daa6d23dc3, type: 3}

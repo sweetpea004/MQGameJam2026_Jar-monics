@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Fern
   m_EditorClassIdentifier: Assembly-CSharp::PlantStage
   stages:
-  - {fileID: -855298285791758126, guid: 215e88d078c7ba001a59079ea7d8cd9d, type: 3}
-  - {fileID: 6937817954938267909, guid: 6234633938a5228cbb30295ae2df8189, type: 3}
-  - {fileID: -6470460504253458178, guid: 872b619bb911a336c9940865fef3e290, type: 3}
-  - {fileID: -4178046375966092550, guid: 0c9c7a50626b2a6b785ca32e82f439a9, type: 3}
+  - {fileID: -855298285791758126, guid: 0b8673a0d0689ae4ebb21243a2ec1799, type: 3}
+  - {fileID: 6937817954938267909, guid: f8ba87860437c1f4bb9999b0da8c33c6, type: 3}
+  - {fileID: -6470460504253458178, guid: 376aa823056845441aa5155d5f4effaa, type: 3}
+  - {fileID: -4178046375966092550, guid: 0b850388a76dc9741b1384255d1aefc2, type: 3}

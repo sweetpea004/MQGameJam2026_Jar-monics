@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Moss
   m_EditorClassIdentifier: Assembly-CSharp::PlantStage
   stages:
-  - {fileID: -855298285791758126, guid: 335c44c49d0987c92979470ced74aef4, type: 3}
-  - {fileID: 6937817954938267909, guid: d4e7de5217cdb4d7d8a11e918da78240, type: 3}
-  - {fileID: -6470460504253458178, guid: 603797a4c6682f96dacc6d875d78f6f3, type: 3}
-  - {fileID: -4178046375966092550, guid: d722f0eb6321333499d0e4d8a026c5ec, type: 3}
+  - {fileID: -855298285791758126, guid: b3e1742baed3e2548898f895b809d37d, type: 3}
+  - {fileID: 6937817954938267909, guid: 267b1e3e1eb489a4ea19eea7d3ebf34e, type: 3}
+  - {fileID: -6470460504253458178, guid: 891487f0b92367645b50304a6239d7b8, type: 3}
+  - {fileID: -4178046375966092550, guid: 15412e3f638e5e44ab8f7c36b4657fb6, type: 3}
