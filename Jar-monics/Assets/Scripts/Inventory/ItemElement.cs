@@ -4,12 +4,17 @@ public class ItemElement
 {
     private readonly string itemName;
     private int quantity;
+    private Item item;
 
-
-    public ItemElement(string name, int qty)
+    public Item GetItem
+    {
+        get => item;
+    }
+    public ItemElement(string name, int qty, Item itemScript)
     {
         itemName = name;
         quantity = qty;
+        item = itemScript;
     }
     public int Quantity
     {
@@ -41,5 +46,9 @@ public class ItemElement
     public override int GetHashCode()
     {
         return base.GetHashCode();
+    }
+    public override string ToString()
+    {
+        return string.Format("{0}: {1}", Name, quantity);
     }
 }

@@ -1,10 +1,15 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class UIManager : MonoBehaviour
 {
     [SerializeField] GameObject seedPanel;
     [SerializeField] GameObject plantPanel;
     [SerializeField] GameObject bottlePanel;
+
+    [SerializeField] private GameObject blankSpawner;
+    // [SerializeField] private PlantStages[] allPlants;
+    [SerializeField] private GameObject demoParentRoom;
 
     private static UIManager singleton;
     public static UIManager Instance
@@ -33,6 +38,7 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         GameManager.Instance.screenTransition += ToggleUI;
+        InventorySystem.Instance.UpdateInventoryUI += UpdateIcons;
         currentTab = FindAnyObjectByType<Tab>();
         if (currentTab != null)
         {
@@ -84,6 +90,56 @@ public class UIManager : MonoBehaviour
             case ETabCategory.UNASSIGNED:
                 Debug.LogError("Unassigned tab" + tab);
                 break;
+        }
+    }
+
+    private void UpdateIcons(ETabCategory tab, ItemElement[] array)
+    {
+        switch (tab)
+        {
+            case ETabCategory.SEED:
+                return;
+            case ETabCategory.PLANT:
+                UpdatePlants(array);
+                break;
+            case ETabCategory.BOTTLE:
+
+                break;
+            case ETabCategory.UNASSIGNED:
+                break;
+        }
+    }
+
+    private void UpdatePlants(ItemElement[] array)
+    {
+        //delete everything
+        for (int i = 0; i < plantPanel.transform.childCount; i++)
+        {
+            Transform child = plantPanel.transform.GetChild(i);
+            Destroy(child.gameObject);
+        }
+
+        foreach (ItemElement item in array)
+        {
+            if (item == null)
+            {
+                continue;
+            }
+            Plant script = item.GetItem as Plant;
+            GameObject plantPrefab = script.StageSprites.stages[script.GetStage];
+
+            ItemSpawner sp = blankSpawner.GetComponent<ItemSpawner>();
+            sp.SetSpawned(plantPrefab);
+            sp.SetParent(demoParentRoom);
+           
+            Sprite sprite = plantPrefab.GetComponentInChildren<SpriteRenderer>().sprite;
+            Debug.Log(sprite);
+            sp.GetComponentInChildren<UnityEngine.UI.Image>().sprite = sprite;
+
+            GameObject spawner = Instantiate(blankSpawner, transform.position, Quaternion.identity, plantPanel.transform);
+
+
+
         }
     }
 }

@@ -4,7 +4,15 @@ using UnityEngine;
 public class ItemSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject spawned;
+    public void SetSpawned(GameObject obj)
+    {
+        spawned = obj;
+    }
     [SerializeField] private GameObject parentRoom;
+    public void SetParent(GameObject obj)
+    {
+        parentRoom = obj;
+    }
     private Point point;
     private BoxCollider2D box;
 
@@ -24,7 +32,7 @@ public class ItemSpawner : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(box.OverlapPoint(GameManager.Instance.ViewportMousePos) + string.Format("({0})", GameManager.Instance.ViewportMousePos));
+        // Debug.Log(box.OverlapPoint(GameManager.Instance.ViewportMousePos) + string.Format("({0})", GameManager.Instance.ViewportMousePos));
 
         if (GameManager.Instance.ClickMouse.WasPressedThisFrame() && box.OverlapPoint(GameManager.Instance.ViewportMousePos))
         {

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 291fb13a28990d941b803aa6cc307913, type: 3}
+  m_Name: Fern
+  m_EditorClassIdentifier: Assembly-CSharp::ItemSprite
+  stages:
+  - {fileID: 453860986615482233, guid: 382ea927f0977d347ab91bf30e77d90f, type: 3}
+  - {fileID: 9023333504155594333, guid: f0fc5a49ad15526448de3851e4b008d7, type: 3}
+  - {fileID: 226252815595336713, guid: bf2f64609d0406245b7a6a8c81ee9fd3, type: 3}
+  - {fileID: 7546347198708017662, guid: 28c6975f448b1c04bbf55abaf767ec6c, type: 3}

@@ -7,10 +7,9 @@ using UnityEngine;
 public abstract class Item : MonoBehaviour
 {
     private BoxCollider2D box;
-    private string itemName;
     public string GetName
     {
-        get => itemName;
+        get => gameObject.name;
     }
     private bool isDragged = false;
     private bool isInfinite = false;
@@ -58,9 +57,6 @@ public abstract class Item : MonoBehaviour
     protected void Awake()
     {
         box = GetComponent<BoxCollider2D>();
-
-        itemName = gameObject.name;
-
     }
 
     protected void Update()
