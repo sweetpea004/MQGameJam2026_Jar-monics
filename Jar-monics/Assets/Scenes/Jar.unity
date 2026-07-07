@@ -628,10 +628,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Foliage
   stages:
-  - {fileID: -5382199391509058341, guid: dd6f17c096cf36d0e92196de12b6935c, type: 3}
-  - {fileID: 1732015861850713364, guid: 54aad7647569fe456b387b1f2ce99dff, type: 3}
-  - {fileID: 117119006023367679, guid: efc2d545c05582c7c83cfc1397463d20, type: 3}
-  - {fileID: 2653816373924519562, guid: 102845fb2d02ae18084427ecb510b175, type: 3}
+  - {fileID: 7536458381352112627, guid: 458378df980246e458d2a3378fd842e4, type: 3}
+  - {fileID: -8728439389244122734, guid: a84217b6193304b45bbd808cf64f65fe, type: 3}
+  - {fileID: 1090376217813512402, guid: e0332b06fe6a15b418ff6af5191f8f78, type: 3}
+  - {fileID: -3033962309406360609, guid: 32809b774c615ff488418610b52c1e60, type: 3}
 --- !u!4 &492896230
 Transform:
   m_ObjectHideFlags: 0
@@ -682,6 +682,7 @@ MonoBehaviour:
   lerpSpeed: 10
   lastPoint: {fileID: 0}
   stage: 0
+  isMaj: 0
 --- !u!50 &571234880
 Rigidbody2D:
   serializedVersion: 5
@@ -1335,10 +1336,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Moss
   stages:
-  - {fileID: -855298285791758126, guid: 335c44c49d0987c92979470ced74aef4, type: 3}
-  - {fileID: 6937817954938267909, guid: d4e7de5217cdb4d7d8a11e918da78240, type: 3}
-  - {fileID: -6470460504253458178, guid: 603797a4c6682f96dacc6d875d78f6f3, type: 3}
-  - {fileID: -4178046375966092550, guid: d722f0eb6321333499d0e4d8a026c5ec, type: 3}
+  - {fileID: -855298285791758126, guid: b3e1742baed3e2548898f895b809d37d, type: 3}
+  - {fileID: 6937817954938267909, guid: 267b1e3e1eb489a4ea19eea7d3ebf34e, type: 3}
+  - {fileID: -6470460504253458178, guid: 891487f0b92367645b50304a6239d7b8, type: 3}
+  - {fileID: -4178046375966092550, guid: 15412e3f638e5e44ab8f7c36b4657fb6, type: 3}
 --- !u!114 &1295433507 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6210797073252919222, guid: 3152de886cd362145b7d46d318010df8, type: 3}
@@ -1526,10 +1527,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cactus
   stages:
-  - {fileID: -855298285791758126, guid: 235d5697a5b82d86ab2bcb84c203b65c, type: 3}
-  - {fileID: 6937817954938267909, guid: 6f1a0f299a0648e61a02603cd72807f5, type: 3}
-  - {fileID: -6470460504253458178, guid: 477689846e7c455058ae3a7f6edfb1c2, type: 3}
-  - {fileID: -4178046375966092550, guid: 6dc9337a1241bf409b520eceec107ef1, type: 3}
+  - {fileID: -855298285791758126, guid: 84112fa86f5f71b4380edc0d65c9f6e1, type: 3}
+  - {fileID: 6937817954938267909, guid: b74de6af9b6b28a4c8139f9c1b11577f, type: 3}
+  - {fileID: -6470460504253458178, guid: 41345e87f7e8a314096a7e17bfa89f9d, type: 3}
+  - {fileID: -4178046375966092550, guid: 414efbb6b67e1b64fac680daa6d23dc3, type: 3}
 --- !u!4 &1576901598
 Transform:
   m_ObjectHideFlags: 0
@@ -1705,63 +1706,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4708512810868390446, guid: 0db759f843eb20241ae6ff49b7fedd30, type: 3}
   m_PrefabInstance: {fileID: 1593720018}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1599733142
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1558374299767853878, guid: 1d660ea3abab7b6409553e6d90ca98a1, type: 3}
-      propertyPath: m_Name
-      value: Bottle (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 9204630991748960284, guid: 1d660ea3abab7b6409553e6d90ca98a1, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -20.21048
-      objectReference: {fileID: 0}
-    - target: {fileID: 9204630991748960284, guid: 1d660ea3abab7b6409553e6d90ca98a1, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.9560882
-      objectReference: {fileID: 0}
-    - target: {fileID: 9204630991748960284, guid: 1d660ea3abab7b6409553e6d90ca98a1, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9204630991748960284, guid: 1d660ea3abab7b6409553e6d90ca98a1, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9204630991748960284, guid: 1d660ea3abab7b6409553e6d90ca98a1, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9204630991748960284, guid: 1d660ea3abab7b6409553e6d90ca98a1, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9204630991748960284, guid: 1d660ea3abab7b6409553e6d90ca98a1, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9204630991748960284, guid: 1d660ea3abab7b6409553e6d90ca98a1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9204630991748960284, guid: 1d660ea3abab7b6409553e6d90ca98a1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9204630991748960284, guid: 1d660ea3abab7b6409553e6d90ca98a1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 1d660ea3abab7b6409553e6d90ca98a1, type: 3}
 --- !u!1 &1787367606
 GameObject:
   m_ObjectHideFlags: 0
@@ -1807,10 +1751,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Fern
   stages:
-  - {fileID: -855298285791758126, guid: 215e88d078c7ba001a59079ea7d8cd9d, type: 3}
-  - {fileID: 6937817954938267909, guid: 6234633938a5228cbb30295ae2df8189, type: 3}
-  - {fileID: -6470460504253458178, guid: 872b619bb911a336c9940865fef3e290, type: 3}
-  - {fileID: -4178046375966092550, guid: 0c9c7a50626b2a6b785ca32e82f439a9, type: 3}
+  - {fileID: -855298285791758126, guid: 0b8673a0d0689ae4ebb21243a2ec1799, type: 3}
+  - {fileID: 6937817954938267909, guid: f8ba87860437c1f4bb9999b0da8c33c6, type: 3}
+  - {fileID: -6470460504253458178, guid: 376aa823056845441aa5155d5f4effaa, type: 3}
+  - {fileID: -4178046375966092550, guid: 0b850388a76dc9741b1384255d1aefc2, type: 3}
 --- !u!1 &1861092201
 GameObject:
   m_ObjectHideFlags: 0
@@ -1841,9 +1785,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Succulent
   stages:
-  - {fileID: -855298285791758126, guid: 67da78902dcaef2d197572f2dcc26420, type: 3}
-  - {fileID: 6937817954938267909, guid: eedde9633df712119bd3ba4052958b73, type: 3}
-  - {fileID: -6470460504253458178, guid: 1938907f445accde1bf03d0bf7917554, type: 3}
+  - {fileID: -855298285791758126, guid: aeb21db13b24a06419b4feff9dd7c858, type: 3}
+  - {fileID: 6937817954938267909, guid: a56af4330a319ce4a8c37482d99ef033, type: 3}
+  - {fileID: -6470460504253458178, guid: 1a9d18ea27f2e07428a5a4f1cf17e05b, type: 3}
 --- !u!4 &1861092203
 Transform:
   m_ObjectHideFlags: 0
@@ -2053,10 +1997,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bottle
       objectReference: {fileID: 0}
-    - target: {fileID: 4024235081215028715, guid: 1d660ea3abab7b6409553e6d90ca98a1, type: 3}
-      propertyPath: lerpSpeed
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 9204630991748960284, guid: 1d660ea3abab7b6409553e6d90ca98a1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2067,7 +2007,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9204630991748960284, guid: 1d660ea3abab7b6409553e6d90ca98a1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 9204630991748960284, guid: 1d660ea3abab7b6409553e6d90ca98a1, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2195,7 +2135,6 @@ SceneRoots:
   - {fileID: 2982039107983517323}
   - {fileID: 733362186}
   - {fileID: 1062542480}
-  - {fileID: 1599733142}
   - {fileID: 236963728}
   - {fileID: 1787367607}
   - {fileID: 1576901598}
