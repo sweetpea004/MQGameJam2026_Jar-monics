@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1435976174441486636
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5881087595520595562}
+  - component: {fileID: 4648072640533053301}
+  - component: {fileID: 1881910977047819391}
+  - component: {fileID: 6861121265839624564}
+  - component: {fileID: 8536459188407762650}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5881087595520595562
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1435976174441486636}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.84351, y: -0.89075, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4648072640533053301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1435976174441486636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5647b76bcdd1b24fb881a42b2652317, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  rooms: []
+  pointObject: {fileID: 4254607685525150080, guid: 0db759f843eb20241ae6ff49b7fedd30, type: 3}
+--- !u!114 &1881910977047819391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1435976174441486636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a4f2298fd1a7084eb16a0fa20be8a90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InventorySystem
+--- !u!114 &6861121265839624564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1435976174441486636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c23757e45300be04c995a94379896745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SOManager
+  plants:
+  - {fileID: 11400000, guid: b02dfe096cdb24e47b74b493d3818f3f, type: 2}
+  - {fileID: 11400000, guid: 1b8f7c4d09524dc418b09046c82da8b4, type: 2}
+  - {fileID: 11400000, guid: 78c211dbe189c6c42937320548c16ddd, type: 2}
+  - {fileID: 11400000, guid: 11f655a2f5badc04697f032ab5b4c875, type: 2}
+  - {fileID: 11400000, guid: 9234be93aca8bad48bbc8b301a693d18, type: 2}
+--- !u!114 &8536459188407762650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1435976174441486636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d4de53ed7156e14fb48279363996fca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GardenManager
+  groundPlots: []
+  gardenPlant: {fileID: 6549362204787947166, guid: e5b0d0bdebb2026469fb4334e19ab68d, type: 3}
