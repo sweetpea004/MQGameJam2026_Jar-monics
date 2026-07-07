@@ -1,13 +1,15 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
+using UnityEditor.Build;
 using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider2D))]
 [RequireComponent(typeof(Rigidbody2D))]
 public abstract class Item : MonoBehaviour
 {
-    protected BoxCollider2D box;
+    private BoxCollider2D box;
     private Rigidbody2D body;
     public string GetName
     {
@@ -26,6 +28,7 @@ public abstract class Item : MonoBehaviour
         get => isInfinite;
     }
 
+    private Vector3 mousePos;
     [SerializeField] private Point lastPoint;
     public void SetLastPoint(Point point)
     {
@@ -35,15 +38,8 @@ public abstract class Item : MonoBehaviour
     {
         get => lastPoint;
     }
-
-    [SerializeField] private bool shouldLerpToPoint = true;
-    public void SetLerpingToPoints(bool value)
-    {
-        shouldLerpToPoint = value;
-    }
-
     private List<Point> newPoints = new List<Point>();
-
+    
     public void SetDragging(bool value)
     {
         isDragged = value;
@@ -54,10 +50,10 @@ public abstract class Item : MonoBehaviour
         {
             newPoints.Add(collision.gameObject.GetComponent<Point>());
         }
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Bottle") && gameObject.layer == LayerMask.NameToLayer("Plant"))
+        if(collision.gameObject.layer == LayerMask.NameToLayer("Bottle") && gameObject.layer == LayerMask.NameToLayer("Plant"))
         {
             Bottle b = collision.gameObject.GetComponent<Bottle>();
-            if (b.occupants < 3)
+            if(b.occupants < 3)
             {
                 b.AddPlant(gameObject);
                 lastPoint = null;
@@ -92,7 +88,7 @@ public abstract class Item : MonoBehaviour
             transform.position = GameManager.Instance.WorldMousePos;
         }
 
-        if (!isDragged && lastPoint != null && shouldLerpToPoint)
+        if (!isDragged && lastPoint != null)
         {
             transform.position = Vector3.Lerp(transform.position, lastPoint.transform.position, lerpSpeed * Time.deltaTime);
         }
@@ -104,7 +100,7 @@ public abstract class Item : MonoBehaviour
         if (GameManager.Instance.ClickMouse.WasPressedThisFrame() && box.OverlapPoint(GameManager.Instance.WorldMousePos))
         {
             isDragged = true;
-            if (lastPoint != null)
+            if(lastPoint != null)
             {
                 lastPoint.Occupant = null;
             }
@@ -113,37 +109,33 @@ public abstract class Item : MonoBehaviour
 
         if (GameManager.Instance.ClickMouse.WasReleasedThisFrame())
         {
-            isDragged = false;
-            OnItemReleased();
-        }
-    }
-
-    public virtual void OnItemReleased()
-    {
-        if (newPoints.Count > 0)
-        {
-            newPoints = newPoints.OrderBy(p => Vector3.Distance(transform.position, p.transform.position)).ToList();
-            for (int i = 0; i < newPoints.Count; i++)
+            if (newPoints.Count > 0)
             {
-                if (gameObject.layer == LayerMask.NameToLayer("Bottle") && !newPoints.ElementAt(i).RejectBottle)
+                newPoints = newPoints.OrderBy(p => Vector3.Distance(transform.position, p.transform.position)).ToList();
+                for(int i = 0; i < newPoints.Count; i++)
                 {
-                    lastPoint = newPoints.ElementAt(i);
-                    break;
-                }
-                else if (gameObject.layer == LayerMask.NameToLayer("Plant") && !newPoints.ElementAt(i).RejectPlant)
-                {
-                    lastPoint = newPoints.ElementAt(i);
-                    break;
+                    if(gameObject.layer == LayerMask.NameToLayer("Bottle") && !newPoints.ElementAt(i).RejectBottle)
+                    {
+                        lastPoint = newPoints.ElementAt(i);
+                        break;
+                    }
+                    else if(gameObject.layer == LayerMask.NameToLayer("Plant") && !newPoints.ElementAt(i).RejectPlant)
+                    {
+                        lastPoint = newPoints.ElementAt(i);
+                        break;
+                    }
                 }
             }
-        }
+            isDragged = false;
 
-
-        if (lastPoint != null)
-        {
-            lastPoint.Occupant = this;
-            transform.localScale = lastPoint.transform.localScale * 2;
+            if(lastPoint != null)
+            {
+                lastPoint.Occupant = this;
+                transform.localScale = lastPoint.transform.localScale * 2;
+            }
         }
     }
+
+    public abstract void OnItemReleased();
     public abstract void OnItemSelected();
 }
