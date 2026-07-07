@@ -1,9 +1,8 @@
 using UnityEngine;
-using System;
 
-public class Seed : Item
+public class Tool : Item
 {
-    [SerializeField] private PlantType plant;
+    [SerializeField] private ToolType toolType;
     protected void Start()
     {
         SetInfinity(true);
@@ -11,11 +10,18 @@ public class Seed : Item
     }
     public override void OnItemReleased()
     {
-        GardenManager.Instance.AnyTouches(box, plant);
+        GardenManager.Instance.AnyTouches(box, toolType);
 
         Destroy(gameObject);
     }
     public override void OnItemSelected()
     {
     }
+}
+
+public enum ToolType
+{
+    UNASSIGNED, 
+    TROWEL,
+    WATERINGCAN
 }

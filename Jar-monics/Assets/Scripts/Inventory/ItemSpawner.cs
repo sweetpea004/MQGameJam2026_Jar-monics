@@ -40,7 +40,7 @@ public class ItemSpawner : MonoBehaviour
             GameObject obj = Instantiate(spawned, GameManager.Instance.WorldMousePos, Quaternion.identity, parentRoom.transform);
             Item item = obj.GetComponent<Item>();
             item.SetDragging(true);
-            item.SetLastPoint(point);
+            // item.SetLastPoint(point);
 
             if (item.GetInfinity)
             {

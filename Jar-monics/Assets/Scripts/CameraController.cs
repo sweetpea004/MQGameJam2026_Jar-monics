@@ -28,6 +28,8 @@ public class CameraController : MonoBehaviour
         moveDown = actions.Camera.Down;
 
         actions.Enable();
+
+        GameManager.Instance.screenTransition?.Invoke(currentRoom);
     }
 
     private void Update()

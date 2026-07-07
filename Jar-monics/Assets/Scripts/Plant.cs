@@ -21,6 +21,10 @@ public class Plant : Item
         }
     }
     private int maxStage = 4; //All but two plants have 4 stages, the other two have had this value changed in Awake()
+    public int GetMaxStage
+    {
+        get => maxStage;
+    }
     [SerializeField] private bool isMaj = false;
 
 
