@@ -45,6 +45,15 @@ public class Plant : Item
         SetSprite();
     }
 
+    public void Initialise(PlantType t)
+    {
+        type = t;
+        if(t == PlantType.Foliage)
+        {
+            
+        }
+    }
+
     void SetSprite()
     {
 
