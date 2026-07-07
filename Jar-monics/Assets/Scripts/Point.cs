@@ -17,4 +17,32 @@ public class Point : MonoBehaviour
             occupant = value;
         }
     }
+
+    private bool rejectPlant = false;
+    public bool RejectPlant
+    {
+        get
+        {
+            return rejectPlant;
+        }
+
+        set
+        {
+            rejectPlant = value;
+        }
+    }
+
+    private bool rejectBottle = false;
+    public bool RejectBottle
+    {
+        get
+        {
+            return rejectBottle;
+        }
+
+        set
+        {
+            rejectBottle = value;
+        }
+    }
 }

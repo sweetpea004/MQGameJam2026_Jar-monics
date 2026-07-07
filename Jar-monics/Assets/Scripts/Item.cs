@@ -1,3 +1,6 @@
+using System.Collections.Generic;
+using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -14,7 +17,7 @@ public class Item : MonoBehaviour
     private bool isDragged = false;
     private Vector3 mousePos;
     [SerializeField] private Point lastPoint;
-    private Point newPoint;
+    private List<Point> newPoints = new List<Point>();
 
     void OnEnable()
     {
@@ -32,7 +35,7 @@ public class Item : MonoBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Point") && collision.gameObject.GetComponent<Point>().Occupant == null)
         {
-            newPoint = collision.gameObject.GetComponent<Point>();
+            newPoints.Add(collision.gameObject.GetComponent<Point>());
         }
     }
 
@@ -40,7 +43,7 @@ public class Item : MonoBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Point"))
         {
-            newPoint = null;
+            newPoints.Remove(collision.gameObject.GetComponent<Point>());
         }
     }
 
@@ -81,9 +84,10 @@ public class Item : MonoBehaviour
         
 
         if(click.WasReleasedThisFrame()){
-            if (newPoint != null)
+            if (newPoints.Count > 0)
             {
-                lastPoint = newPoint;
+                newPoints = newPoints.OrderBy(p => Vector3.Distance(transform.position, p.transform.position)).ToList();
+                lastPoint = newPoints.ElementAt(0);
             }
             isDragged = false;
             lastPoint.Occupant = this;
