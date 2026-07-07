@@ -228,6 +228,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1964839135897555659, guid: 19bc4c33e5a091e47b232ca70fa693d7, type: 3}
+      propertyPath: stage
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1964839135897555659, guid: 19bc4c33e5a091e47b232ca70fa693d7, type: 3}
       propertyPath: tonality
       value: 0
       objectReference: {fileID: 0}
@@ -1101,6 +1105,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1964839135897555659, guid: 19bc4c33e5a091e47b232ca70fa693d7, type: 3}
+      propertyPath: stage
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1964839135897555659, guid: 19bc4c33e5a091e47b232ca70fa693d7, type: 3}
       propertyPath: tonality
       value: 0
       objectReference: {fileID: 0}
@@ -1488,6 +1496,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1964839135897555659, guid: 19bc4c33e5a091e47b232ca70fa693d7, type: 3}
+      propertyPath: stage
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1964839135897555659, guid: 19bc4c33e5a091e47b232ca70fa693d7, type: 3}
       propertyPath: tonality
       value: 0
       objectReference: {fileID: 0}
@@ -1855,6 +1867,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1964839135897555659, guid: 19bc4c33e5a091e47b232ca70fa693d7, type: 3}
+      propertyPath: stage
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1964839135897555659, guid: 19bc4c33e5a091e47b232ca70fa693d7, type: 3}
       propertyPath: tonality
       value: 0
       objectReference: {fileID: 0}
@@ -1917,6 +1933,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1964839135897555659, guid: 19bc4c33e5a091e47b232ca70fa693d7, type: 3}
       propertyPath: type
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1964839135897555659, guid: 19bc4c33e5a091e47b232ca70fa693d7, type: 3}
+      propertyPath: stage
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1964839135897555659, guid: 19bc4c33e5a091e47b232ca70fa693d7, type: 3}
