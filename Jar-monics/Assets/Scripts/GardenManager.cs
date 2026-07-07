@@ -51,7 +51,7 @@ public class GardenManager : MonoBehaviour
         {
             if (plot.GetBounds.IsTouching(collider))
             {
-                Debug.Log("attempting to use tool");
+                Debug.Log("attempting to use tool" + type);
                 UseTool(plot, type);
             }
         }
