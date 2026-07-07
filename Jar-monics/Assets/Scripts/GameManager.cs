@@ -1,6 +1,8 @@
 using UnityEngine;
 using System;
 using UnityEngine.InputSystem;
+using UnityEditor;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(InventorySystem))]
 public class GameManager : MonoBehaviour
@@ -26,6 +28,13 @@ public class GameManager : MonoBehaviour
     }
 
     public Action<Room> screenTransition;
+
+    private bool isMenu = true;
+
+    [SerializeField] private GameObject menu;
+    [SerializeField] private Button start;
+    [SerializeField] private GameObject ui;
+
     private Room currentRoom;
     public Room GetCurrentRoom
     {
@@ -45,6 +54,7 @@ public class GameManager : MonoBehaviour
     public PlayerInput actions;
     public InputAction ClickMouse { get; private set; }
     public InputAction MoveMouse { get; private set; }
+    public InputAction PauseAction {get; private set;}
     public Vector2 ViewportMousePos { get; private set; }
     public Vector2 WorldMousePos { get; private set; }
 
@@ -65,8 +75,32 @@ public class GameManager : MonoBehaviour
         actions = new PlayerInput();
         ClickMouse = actions.Player.Click;
         MoveMouse = actions.Player.Move;
+        PauseAction = actions.Player.Pause;
+
+        PauseAction.performed += PauseGame;
+
 
         cam = Camera.main;
+
+        Button startButton = start.GetComponent<Button>();
+        startButton.onClick.AddListener(StartGame);
+    }
+
+    void StartGame()
+    {
+        isMenu = false;
+        menu.SetActive(false);
+        ui.SetActive(true);
+    }
+
+    void PauseGame(InputAction.CallbackContext context)
+    {
+        if (!isMenu)
+        {
+            isMenu = true;
+            menu.SetActive(true);
+            ui.SetActive(false);
+        }
     }
 
     private void Start()
