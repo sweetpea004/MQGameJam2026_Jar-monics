@@ -74,7 +74,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
-    oldSize: {x: 0.56, y: 0.6}
+    oldSize: {x: 0.6, y: 0.64}
     newSize: {x: 0.31, y: 0.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -124,9 +124,9 @@ MonoBehaviour:
   lerpSpeed: 10
   lastPoint: {fileID: 0}
   shouldLerpToPoint: 1
-  type: 4
-  plantName: Foliage-Stage2
-  stage: 2
+  type: 0
+  plantName: Fern-Stage3
+  stage: 3
   tonality: 2
 --- !u!212 &6987284034254302042
 SpriteRenderer:
@@ -177,7 +177,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -9105386156181285351, guid: 3ee3fa6d463e4324b99176cf1dd4431a, type: 3}
+  m_Sprite: {fileID: -3938832179194803483, guid: 303f6a6ecc1a70946a1b3d8f44a458ec, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -198,7 +198,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 3e335fe30376a93d4be6bf80dba6a736, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
