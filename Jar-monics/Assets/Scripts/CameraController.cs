@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 public class CameraController : MonoBehaviour
 {
 
+    [SerializeField] private float transitionSpeed = 10;
     [SerializeField] private Room startingRoom;
     private Room currentRoom;
 
@@ -56,7 +57,7 @@ public class CameraController : MonoBehaviour
     }
 
     private void moveCamera(){
-        transform.position = Vector3.Lerp(transform.position, new Vector3(currentRoom.GetX, currentRoom.GetY, transform.position.z), 0.1f);
+        transform.position = Vector3.Lerp(transform.position, new Vector3(currentRoom.GetX, currentRoom.GetY, transform.position.z), transitionSpeed * Time.deltaTime);
         Debug.Log(transform.position);
     }
 

@@ -13,7 +13,7 @@ public class Item : MonoBehaviour
 
     private bool isDragged = false;
     private Vector3 mousePos;
-    private Point lastPoint;
+    [SerializeField] private Point lastPoint;
     private Point newPoint;
 
     void OnEnable()
@@ -30,7 +30,7 @@ public class Item : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Point"))
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Point") && collision.gameObject.GetComponent<Point>().Occupant == null)
         {
             newPoint = collision.gameObject.GetComponent<Point>();
         }
@@ -52,8 +52,6 @@ public class Item : MonoBehaviour
 
         cam = Camera.main;
         box = GetComponent<BoxCollider2D>();
-
-        lastPoint = GameObject.Find("Point").GetComponent<Point>();
     }
 
     protected void Update()
@@ -66,7 +64,7 @@ public class Item : MonoBehaviour
             position.z = 0;
             transform.position = position;
         }
-        else
+        else if(lastPoint != null)
         {
             transform.position = Vector3.Lerp(transform.position, lastPoint.transform.position, 0.2f);
         }
@@ -78,6 +76,7 @@ public class Item : MonoBehaviour
         
         if(click.WasPressedThisFrame() && box.OverlapPoint(mousePos)){
             isDragged = true;
+            lastPoint.Occupant = null;
         }
         
 
@@ -87,6 +86,7 @@ public class Item : MonoBehaviour
                 lastPoint = newPoint;
             }
             isDragged = false;
+            lastPoint.Occupant = this;
         }
     }
 }

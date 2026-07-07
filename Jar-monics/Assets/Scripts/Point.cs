@@ -1,18 +1,20 @@
+using System;
 using UnityEngine;
 
 public class Point : MonoBehaviour
 {
-    private Item item;
+    [SerializeField] private Item occupant = null;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public Item Occupant
     {
-        
-    }
+        get
+        {
+            return occupant;
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        set
+        {
+            occupant = value;
+        }
     }
 }
