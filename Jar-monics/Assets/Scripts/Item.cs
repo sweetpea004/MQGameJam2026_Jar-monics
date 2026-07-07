@@ -4,14 +4,29 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider2D))]
-public class Item : MonoBehaviour
+public abstract class Item : MonoBehaviour
 {
     private BoxCollider2D box;
 
 
     private bool isDragged = false;
+    protected bool isInfinite = false;
+
+    public void SetInfinity(bool value)
+    {
+        isInfinite = value;
+    }
+
     private Vector3 mousePos;
     [SerializeField] private Point lastPoint;
+    public void SetLastPoint(Point point)
+    {
+        lastPoint = point;
+    }
+    public Point GetLastPoint
+    {
+        get => lastPoint;
+    }
     private List<Point> newPoints = new List<Point>();
 
     public void SetDragging(bool value)
@@ -48,7 +63,8 @@ public class Item : MonoBehaviour
         {
             transform.position = GameManager.Instance.WorldMousePos;
         }
-        else if (lastPoint != null)
+
+        if (!isDragged && lastPoint != null)
         {
             transform.position = Vector3.Lerp(transform.position, lastPoint.transform.position, 0.2f);
         }
@@ -61,6 +77,7 @@ public class Item : MonoBehaviour
         {
             isDragged = true;
             lastPoint.Occupant = null;
+            OnItemSelected();
         }
 
 
@@ -73,8 +90,10 @@ public class Item : MonoBehaviour
             }
             isDragged = false;
             lastPoint.Occupant = this;
-            transform.localScale = lastPoint.transform.localScale * 2;
+            OnItemReleased();
         }
     }
 
+    public abstract void OnItemReleased();
+    public abstract void OnItemSelected();
 }

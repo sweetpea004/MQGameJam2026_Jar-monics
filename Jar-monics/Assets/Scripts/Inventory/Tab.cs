@@ -3,8 +3,8 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 public class Tab : MonoBehaviour, IPointerClickHandler
 {
-    [SerializeField] private TabCategory tab;
-    public TabCategory GetTab
+    [SerializeField] private ETabCategory tab;
+    public ETabCategory GetTab
     {
         get => tab;
     }

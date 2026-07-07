@@ -6,7 +6,7 @@ public class Bottle : Item
     private bool playing = false;
     private Vector3 direction = new Vector3();
     private BottleType type;
-    [SerializeField] private Plant[] plants = new Plant[3]; 
+    [SerializeField] private Plant[] plants = new Plant[3];
 
     protected new void Awake()
     {
@@ -21,5 +21,13 @@ public class Bottle : Item
     protected new void Update()
     {
         base.Update();
+    }
+
+    public override void OnItemReleased()
+    {
+        transform.localScale = GetLastPoint.transform.localScale * 2;
+    }
+    public override void OnItemSelected()
+    {
     }
 }

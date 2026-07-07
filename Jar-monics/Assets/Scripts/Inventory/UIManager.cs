@@ -72,27 +72,20 @@ public class UIManager : MonoBehaviour
         bottlePanel.SetActive(false);
         switch (tab.GetTab)
         {
-            case TabCategory.SEED:
+            case ETabCategory.SEED:
                 seedPanel.SetActive(true);
                 break;
-            case TabCategory.PLANT:
+            case ETabCategory.PLANT:
                 plantPanel.SetActive(true);
                 break;
-            case TabCategory.BOTTLE:
+            case ETabCategory.BOTTLE:
                 bottlePanel.SetActive(true);
                 break;
-            case TabCategory.UNASSIGNED:
+            case ETabCategory.UNASSIGNED:
                 Debug.LogError("Unassigned tab" + tab);
                 break;
         }
     }
 }
 
-public enum TabCategory
-{
-    UNASSIGNED,
-    SEED,
-    PLANT,
-    BOTTLE
 
-}

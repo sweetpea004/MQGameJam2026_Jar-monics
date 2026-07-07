@@ -5,10 +5,18 @@ public class ItemSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject spawned;
     [SerializeField] private GameObject parentRoom;
-    private BoxCollider2D box; 
+    private Point point;
+    private BoxCollider2D box;
 
-    private void Awake(){
+    private void Awake()
+    {
         box = GetComponent<BoxCollider2D>();
+
+    }
+    private void Start()
+    {
+        GameObject pointObj = Instantiate(GameManager.Instance.GetPointObj, transform.position, Quaternion.identity, transform);
+        point = pointObj.GetComponent<Point>();
     }
 
     private void Update()
@@ -21,8 +29,10 @@ public class ItemSpawner : MonoBehaviour
             GameObject obj = Instantiate(spawned, GameManager.Instance.WorldMousePos, Quaternion.identity, parentRoom.transform);
             Seed seed = obj.GetComponent<Seed>();
             seed.SetDragging(true);
-
+            seed.SetLastPoint(point);
             // obj.transform.position = Vector3.zero;
         }
     }
+
+
 }

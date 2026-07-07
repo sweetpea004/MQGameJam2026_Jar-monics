@@ -17,6 +17,12 @@ public class GameManager : MonoBehaviour
         }
     }
     [SerializeField] private Room[] rooms;
+    [SerializeField] private GameObject pointObject;
+
+    public GameObject GetPointObj
+    {
+        get => pointObject;
+    }
 
     public Action<Room> screenTransition;
     private Room currentRoom;
