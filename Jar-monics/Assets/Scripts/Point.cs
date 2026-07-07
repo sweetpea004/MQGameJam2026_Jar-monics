@@ -1,18 +1,48 @@
+using System;
 using UnityEngine;
 
 public class Point : MonoBehaviour
 {
-    private Item item;
+    [SerializeField] private Item occupant = null;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public Item Occupant
     {
-        
+        get
+        {
+            return occupant;
+        }
+
+        set
+        {
+            occupant = value;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    [SerializeField] private bool rejectPlant = false;
+    public bool RejectPlant
     {
-        
+        get
+        {
+            return rejectPlant;
+        }
+
+        set
+        {
+            rejectPlant = value;
+        }
+    }
+
+    [SerializeField] private bool rejectBottle = false;
+    public bool RejectBottle
+    {
+        get
+        {
+            return rejectBottle;
+        }
+
+        set
+        {
+            rejectBottle = value;
+        }
     }
 }

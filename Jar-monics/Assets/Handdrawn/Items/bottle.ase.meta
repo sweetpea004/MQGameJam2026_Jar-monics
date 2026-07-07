@@ -129,7 +129,7 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: bottle
     originalName: 
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -139,7 +139,7 @@ ScriptedImporter:
       y: 4
       width: 64
       height: 64
-    spriteID: c1fd571e1d0e12125998eb137dcca24c
+    spriteID: 75037912739bdc35e9db3a04c9b2da71
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -171,7 +171,7 @@ ScriptedImporter:
         y: 0
         width: 64
         height: 64
-      spriteId: c1fd571e1d0e12125998eb137dcca24c
+      spriteId: 75037912739bdc35e9db3a04c9b2da71
     linkedCells: []
     tileCells: []
     tileSetIndex: 0

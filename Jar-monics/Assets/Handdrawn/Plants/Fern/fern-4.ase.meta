@@ -129,7 +129,7 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: fern-4
     originalName: 
-    pivot: {x: 0.5166667, y: 0}
+    pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -139,7 +139,7 @@ ScriptedImporter:
       y: 4
       width: 60
       height: 64
-    spriteID: 92ea694860d952a7fbfc106ff18f366a
+    spriteID: f8b1e8ed104918e04b5cd135d2f85d54
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -171,7 +171,7 @@ ScriptedImporter:
         y: 0
         width: 60
         height: 64
-      spriteId: 92ea694860d952a7fbfc106ff18f366a
+      spriteId: f8b1e8ed104918e04b5cd135d2f85d54
     linkedCells: []
     tileCells: []
     tileSetIndex: 0
