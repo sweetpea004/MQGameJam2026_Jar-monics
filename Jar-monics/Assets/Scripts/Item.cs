@@ -1,6 +1,8 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
+using UnityEditor.Build;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -17,10 +19,11 @@ public class Item : MonoBehaviour
     private InputAction move;
 
     private bool isDragged = false;
+    [SerializeField] private float lerpSpeed = 10;
     private Vector3 mousePos;
     [SerializeField] private Point lastPoint;
     private List<Point> newPoints = new List<Point>();
-
+    
     void OnEnable()
     {
         click.Enable();
@@ -38,6 +41,18 @@ public class Item : MonoBehaviour
         if (collision.gameObject.layer == LayerMask.NameToLayer("Point") && collision.gameObject.GetComponent<Point>().Occupant == null)
         {
             newPoints.Add(collision.gameObject.GetComponent<Point>());
+        }
+
+        if(collision.gameObject.layer == LayerMask.NameToLayer("Bottle") && gameObject.layer == LayerMask.NameToLayer("Plant"))
+        {
+            Bottle b = collision.gameObject.GetComponent<Bottle>();
+            if(b.occupants < 3)
+            {
+                b.AddPlant(gameObject);
+                lastPoint = null;
+                gameObject.GetComponent<Collider2D>().enabled = false;
+                isDragged = false;
+            }
         }
     }
 
@@ -74,7 +89,7 @@ public class Item : MonoBehaviour
         }
         else if(lastPoint != null)
         {
-            transform.position = Vector3.Lerp(transform.position, lastPoint.transform.position, 0.2f);
+            transform.position = Vector3.Lerp(transform.position, lastPoint.transform.position, lerpSpeed * Time.deltaTime);
         }
     }
 
