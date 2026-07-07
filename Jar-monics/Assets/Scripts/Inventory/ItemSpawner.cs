@@ -3,17 +3,26 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public class ItemSpawner : MonoBehaviour
 {
-    [SerializeField] private Item spawned;
+    [SerializeField] private GameObject spawned;
+    [SerializeField] private GameObject parent;
     private BoxCollider2D box; 
 
     private void Awake(){
         box = GetComponent<BoxCollider2D>();
     }
 
-    private void Update(){
+    private void Update()
+    {
+        // Debug.Log(box.OverlapPoint(GameManager.Instance.WorldMousePos) + string.Format("({0})", GameManager.Instance.WorldMousePos));
 
-        if(GameManager.Instance.ClickMouse.WasPressedThisFrame() && box.OverlapPoint(GameManager.Instance.MousePos)){
+        if (GameManager.Instance.ClickMouse.WasPressedThisFrame() && box.OverlapPoint(GameManager.Instance.WorldMousePos))
+        {
             //do stuff
+            GameObject obj = Instantiate(spawned, GameManager.Instance.WorldMousePos, Quaternion.identity, transform);
+            Seed seed = obj.GetComponent<Seed>();
+            seed.SetDragging(true);
+
+            // obj.transform.position = Vector3.zero;
         }
     }
 }

@@ -5,19 +5,23 @@ using UnityEngine.InputSystem;
 public class GameManager : MonoBehaviour
 {
     private static GameManager singleton;
-    public static GameManager Instance{
-        get{
-        if(singleton == null){
-            Debug.LogError("uh oh");
-        }
-        return singleton;
+    public static GameManager Instance
+    {
+        get
+        {
+            if (singleton == null)
+            {
+                Debug.LogError("uh oh");
+            }
+            return singleton;
         }
     }
     [SerializeField] private Room[] rooms;
 
     public Action<Room> screenTransition;
     private Room currentRoom;
-    public Room GetCurrentRoom{
+    public Room GetCurrentRoom
+    {
         get => currentRoom;
     }
     public Action<Item> OnItemStartedDragging;
@@ -25,35 +29,45 @@ public class GameManager : MonoBehaviour
     // public event ScreenTransitionEventHandler OnScreenTransition;
 
 
-    private Camera cam {get; private set;}
-    private PlayerInput actions;
-    private InputAction ClickMouse {get; private set;}
-    private InputAction MoveMouse {get; private set;}
+    private Camera cam;
+    public Camera Camera
+    {
+        get => cam;
+    }
 
-    private Vector2 MousePos {get; private set;}
+    public PlayerInput actions;
+    public InputAction ClickMouse { get; private set; }
+    public InputAction MoveMouse { get; private set; }
 
-    private void Awake(){
-        if(singleton == null){
+    public Vector2 WorldMousePos { get; private set; }
+
+    private void Awake()
+    {
+        if (singleton == null)
+        {
             //assign
             singleton = this;
-        }else{
+        }
+        else
+        {
             Destroy(this);
         }
 
         rooms = FindObjectsByType<Room>(FindObjectsSortMode.InstanceID);
 
-        input = new PlayerInput();
-        click = input.Player.Click;
-        move = input.Player.Move;
+        actions = new PlayerInput();
+        ClickMouse = actions.Player.Click;
+        MoveMouse = actions.Player.Move;
 
         cam = Camera.main;
     }
 
-    private void Start(){
+    private void Start()
+    {
         screenTransition += UpdateCurrentRoom;
     }
 
-        void OnEnable()
+    void OnEnable()
     {
         actions.Enable();
     }
@@ -64,16 +78,19 @@ public class GameManager : MonoBehaviour
     }
 
 
-    void UpdateCurrentRoom(Room room){
+    void UpdateCurrentRoom(Room room)
+    {
         currentRoom = room;
     }
 
-    private void Update(){
-        MousePos = MoveMouse.ReadValue<Vector2>();
+    private void Update()
+    {
+        WorldMousePos = cam.ScreenToWorldPoint(MoveMouse.ReadValue<Vector2>());
     }
 }
 
-public enum Screen{
+public enum Screen
+{
     UNASSIGNED,
     GARDEN,
     WORKSHOP,

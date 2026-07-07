@@ -12,10 +12,10 @@ public class Seed : Item
         if(item != this){
             return;
         }
-        if(IsNew){
-        Instantiate(this, GameManager.Instance.GetCurrentRoom.GetPlayArea.transform);
+        // if(IsNew){
+        // Instantiate(this, GameManager.Instance.GetCurrentRoom.GetPlayArea.transform);
             
-        }
+        // }
         IsNew = false;
         
         
