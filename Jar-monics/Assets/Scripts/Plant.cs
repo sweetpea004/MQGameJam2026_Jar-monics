@@ -8,6 +8,18 @@ public class Plant : Item
     private SpriteRenderer sprite;
 
     [SerializeField] private int stage = 0;
+    public int Stage
+    {
+        get
+        {
+            return stage;
+        }
+
+        set
+        {
+            stage = value;
+        }
+    }
     private int maxStage = 4; //All but two plants have 4 stages, the other two have had this value changed in Awake()
     [SerializeField] private bool isMaj = false;
     
@@ -108,6 +120,14 @@ public class Plant : Item
     // Update is called once per frame
     protected new void Update()
     {
+        
+    }
+    public override void OnItemSelected()
+    {
         base.Update();
+    }
+
+    public override void OnItemReleased()
+    {
     }
 }

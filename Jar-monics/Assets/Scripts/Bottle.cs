@@ -47,4 +47,12 @@ public class Bottle : Item
     {
         base.Update();
     }
+
+    public override void OnItemReleased()
+    {
+        transform.localScale = GetLastPoint.transform.localScale * 2;
+    }
+    public override void OnItemSelected()
+    {
+    }
 }

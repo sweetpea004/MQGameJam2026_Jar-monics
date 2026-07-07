@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e1406f4d1bc821b2b90222530871c42b
+guid: 0d9bc34713b02ba48970006e325a124e
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -129,8 +129,8 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: inventory-icon-bottle
     originalName: 
-    pivot: {x: 0.5, y: -1.2105263}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
@@ -139,7 +139,7 @@ ScriptedImporter:
       y: 4
       width: 20
       height: 19
-    spriteID: da885cb82b99b422cbe41a4c352c9757
+    spriteID: 45b6f48e8fb4a864295df20b09c599be
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -171,7 +171,7 @@ ScriptedImporter:
         y: 23
         width: 20
         height: 19
-      spriteId: da885cb82b99b422cbe41a4c352c9757
+      spriteId: 45b6f48e8fb4a864295df20b09c599be
     linkedCells: []
     tileCells: []
     tileSetIndex: 0

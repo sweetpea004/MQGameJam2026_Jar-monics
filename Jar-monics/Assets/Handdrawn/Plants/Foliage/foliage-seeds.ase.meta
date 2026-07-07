@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a7ddd3114a7d3027387d88b06f5e0da9
+guid: 4a836193fda289d48818dbf7ee0783a2
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -129,8 +129,8 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: foliage-seeds
     originalName: 
-    pivot: {x: 0.4814815, y: -0.078431375}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
@@ -139,7 +139,7 @@ ScriptedImporter:
       y: 4
       width: 54
       height: 51
-    spriteID: bd9dad846363c08cda8d2e5957559c1b
+    spriteID: 5633bb506c1b2a248a456dca7dbd0382
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -171,7 +171,7 @@ ScriptedImporter:
         y: 4
         width: 54
         height: 51
-      spriteId: bd9dad846363c08cda8d2e5957559c1b
+      spriteId: 5633bb506c1b2a248a456dca7dbd0382
     linkedCells: []
     tileCells: []
     tileSetIndex: 0

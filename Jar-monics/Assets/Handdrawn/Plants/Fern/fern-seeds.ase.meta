@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a7bec503d9d5a753eae3bc0c9d0a4058
+guid: e44ecfb088cdcde4fa8489320d48ea2a
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -129,8 +129,8 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: fern-seeds
     originalName: 
-    pivot: {x: 0.4814815, y: -0.078431375}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
@@ -139,7 +139,7 @@ ScriptedImporter:
       y: 4
       width: 54
       height: 51
-    spriteID: 8a49c66f40ad2d06e87f52c2e8319075
+    spriteID: db8f8c0d1732f4240a89ecb5b8b510ce
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -171,7 +171,7 @@ ScriptedImporter:
         y: 4
         width: 54
         height: 51
-      spriteId: 8a49c66f40ad2d06e87f52c2e8319075
+      spriteId: db8f8c0d1732f4240a89ecb5b8b510ce
     linkedCells: []
     tileCells: []
     tileSetIndex: 0

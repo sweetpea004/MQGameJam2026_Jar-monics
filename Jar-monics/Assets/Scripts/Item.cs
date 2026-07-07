@@ -4,45 +4,52 @@ using System.Linq;
 using Unity.VisualScripting;
 using UnityEditor.Build;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(BoxCollider2D))]
 [RequireComponent(typeof(Rigidbody2D))]
-public class Item : MonoBehaviour
+public abstract class Item : MonoBehaviour
 {
-    private Camera cam;
     private BoxCollider2D box;
     private Rigidbody2D body;
-
-    private PlayerInput input;
-    private InputAction click;
-    private InputAction move;
-
+    public string GetName
+    {
+        get => gameObject.name;
+    }
     private bool isDragged = false;
     [SerializeField] private float lerpSpeed = 10;
+    private bool isInfinite = false;
+
+    public void SetInfinity(bool value)
+    {
+        isInfinite = value;
+    }
+    public bool GetInfinity
+    {
+        get => isInfinite;
+    }
+
     private Vector3 mousePos;
     [SerializeField] private Point lastPoint;
+    public void SetLastPoint(Point point)
+    {
+        lastPoint = point;
+    }
+    public Point GetLastPoint
+    {
+        get => lastPoint;
+    }
     private List<Point> newPoints = new List<Point>();
     
-    void OnEnable()
+    public void SetDragging(bool value)
     {
-        click.Enable();
-        move.Enable();
+        isDragged = value;
     }
-
-    void OnDisable()
-    {
-        click.Disable();
-        move.Disable();
-    }
-
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Point") && collision.gameObject.GetComponent<Point>().Occupant == null)
         {
             newPoints.Add(collision.gameObject.GetComponent<Point>());
         }
-
         if(collision.gameObject.layer == LayerMask.NameToLayer("Bottle") && gameObject.layer == LayerMask.NameToLayer("Plant"))
         {
             Bottle b = collision.gameObject.GetComponent<Bottle>();
@@ -66,11 +73,6 @@ public class Item : MonoBehaviour
 
     protected void Awake()
     {
-        input = new PlayerInput();
-        click = input.Player.Click;
-        move = input.Player.Move;
-
-        cam = Camera.main;
         box = GetComponent<BoxCollider2D>();
         body = GetComponent<Rigidbody2D>();
 
@@ -83,30 +85,30 @@ public class Item : MonoBehaviour
 
         if (isDragged)
         {
-            Vector3 position = mousePos;
-            position.z = 0;
-            transform.position = position;
+            transform.position = GameManager.Instance.WorldMousePos;
         }
-        else if(lastPoint != null)
+
+        if (!isDragged && lastPoint != null)
         {
             transform.position = Vector3.Lerp(transform.position, lastPoint.transform.position, lerpSpeed * Time.deltaTime);
         }
     }
 
-    void DraggingItem(){
-        Vector2 mouse = move.ReadValue<Vector2>();
-        mousePos = cam.ScreenToWorldPoint(mouse);
-        
-        if(click.WasPressedThisFrame() && box.OverlapPoint(mousePos)){
+    void DraggingItem()
+    {
+
+        if (GameManager.Instance.ClickMouse.WasPressedThisFrame() && box.OverlapPoint(GameManager.Instance.WorldMousePos))
+        {
             isDragged = true;
             if(lastPoint != null)
             {
                 lastPoint.Occupant = null;
             }
         }
-        
 
-        if(click.WasReleasedThisFrame()){
+
+        if (GameManager.Instance.ClickMouse.WasReleasedThisFrame())
+        {
             if (newPoints.Count > 0)
             {
                 newPoints = newPoints.OrderBy(p => Vector3.Distance(transform.position, p.transform.position)).ToList();
@@ -133,4 +135,7 @@ public class Item : MonoBehaviour
             }
         }
     }
+
+    public abstract void OnItemReleased();
+    public abstract void OnItemSelected();
 }

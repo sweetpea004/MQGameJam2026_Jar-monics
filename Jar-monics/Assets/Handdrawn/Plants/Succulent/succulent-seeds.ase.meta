@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e998ed00974d26d24aee4de55a1942fc
+guid: 7bc4081dab5d00848a071086359e9147
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -129,8 +129,8 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: succulent-seeds
     originalName: 
-    pivot: {x: 0.4814815, y: -0.078431375}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
@@ -139,7 +139,7 @@ ScriptedImporter:
       y: 4
       width: 54
       height: 51
-    spriteID: c86e75eb0ce2ecbcab07b00c2160fd2b
+    spriteID: 18fc5c30538f34b4283e8f0f8b12afeb
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -171,7 +171,7 @@ ScriptedImporter:
         y: 4
         width: 54
         height: 51
-      spriteId: c86e75eb0ce2ecbcab07b00c2160fd2b
+      spriteId: 18fc5c30538f34b4283e8f0f8b12afeb
     linkedCells: []
     tileCells: []
     tileSetIndex: 0

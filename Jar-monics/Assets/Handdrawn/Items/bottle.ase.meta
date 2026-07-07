@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a9deb20ebfb3c7b839fb125f0e05b685
+guid: 82741a62a6ab53c44a54dad602b809de
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -129,7 +129,7 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: bottle
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -139,7 +139,7 @@ ScriptedImporter:
       y: 4
       width: 64
       height: 64
-    spriteID: 75037912739bdc35e9db3a04c9b2da71
+    spriteID: df52e6bcffe46cc43801bbb67cac7f80
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -171,7 +171,7 @@ ScriptedImporter:
         y: 0
         width: 64
         height: 64
-      spriteId: 75037912739bdc35e9db3a04c9b2da71
+      spriteId: df52e6bcffe46cc43801bbb67cac7f80
     linkedCells: []
     tileCells: []
     tileSetIndex: 0

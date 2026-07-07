@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a2ce843f71ccb1cc0ac4c08b1fc4b2e4
+guid: ec3504fa2216dff46ae0f819828dd38f
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -129,8 +129,8 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: inventory-icon-seeds
     originalName: 
-    pivot: {x: 0.5, y: -1.2105263}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
@@ -139,7 +139,7 @@ ScriptedImporter:
       y: 4
       width: 20
       height: 19
-    spriteID: 351c18f4fa8af09448a5fef1b262a8b2
+    spriteID: f86143d74a5909047a0b3f4778484a7b
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -171,7 +171,7 @@ ScriptedImporter:
         y: 23
         width: 20
         height: 19
-      spriteId: 351c18f4fa8af09448a5fef1b262a8b2
+      spriteId: f86143d74a5909047a0b3f4778484a7b
     linkedCells: []
     tileCells: []
     tileSetIndex: 0

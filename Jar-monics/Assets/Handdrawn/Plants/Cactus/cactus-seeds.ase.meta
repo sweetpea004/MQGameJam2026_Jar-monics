@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9b68dce4c2517874fb01b17f5c689261
+guid: 9720d5ead206fa444b693fc95f8f8761
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -129,8 +129,8 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: cactus-seeds
     originalName: 
-    pivot: {x: 0.4814815, y: -0.078431375}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
@@ -139,7 +139,7 @@ ScriptedImporter:
       y: 4
       width: 54
       height: 51
-    spriteID: 7d974a42d24283999bcd5c453cb8dfb5
+    spriteID: 61cc97dcef6427944a605ec23c952c4f
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -171,7 +171,7 @@ ScriptedImporter:
         y: 4
         width: 54
         height: 51
-      spriteId: 7d974a42d24283999bcd5c453cb8dfb5
+      spriteId: 61cc97dcef6427944a605ec23c952c4f
     linkedCells: []
     tileCells: []
     tileSetIndex: 0
