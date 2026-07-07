@@ -46,6 +46,9 @@ public class Plant : Item
         type = t;
         isMaj = isMajor;
     }
+    public override void OnItemReleased()
+    {
+    }
 
     public override void OnItemSelected()
     {
