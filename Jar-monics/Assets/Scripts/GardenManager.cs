@@ -29,15 +29,18 @@ public class GardenManager : MonoBehaviour
             Destroy(this);
         }
 
-        groundPlots = FindObjectsByType<GardenPlot>(FindObjectsSortMode.InstanceID);
+        groundPlots = FindObjectsByType<GardenPlot>(FindObjectsInactive.Include, FindObjectsSortMode.InstanceID);
     }
 
     public void AnyTouches(BoxCollider2D collider, PlantType type)
     {
+        Debug.Log("touched");
         foreach (GardenPlot plot in groundPlots)
         {
+            Debug.Log(plot.GetBounds.IsTouching(collider));
             if (plot.GetBounds.IsTouching(collider))
             {
+                Debug.Log("attempting to plant seed");
                 PlantSeed(plot, type);
             }
         }
@@ -48,6 +51,7 @@ public class GardenManager : MonoBehaviour
         {
             if (plot.GetBounds.IsTouching(collider))
             {
+                Debug.Log("attempting to use tool");
                 UseTool(plot, type);
             }
         }
@@ -70,7 +74,7 @@ public class GardenManager : MonoBehaviour
             Debug.LogError("no plant planeted here");
             return;
         }
-        
+
         if (type == ToolType.TROWEL)
         {
             InventorySystem.Instance.AddItemOne(plot.GetPlant.GetItem());

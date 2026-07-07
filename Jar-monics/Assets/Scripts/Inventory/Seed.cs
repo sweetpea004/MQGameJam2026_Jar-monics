@@ -11,6 +11,7 @@ public class Seed : Item
     }
     public override void OnItemReleased()
     {
+        Debug.Log("items dropped");
         GardenManager.Instance.AnyTouches(box, plant);
 
         Destroy(gameObject);
