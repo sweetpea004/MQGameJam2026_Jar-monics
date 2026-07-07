@@ -18,7 +18,7 @@ public class PlantStage : ScriptableObject
 
     [SerializeField] private Sprite[] stages = new Sprite[4];
     [SerializeField] private GameObject[] prefabs = new GameObject[4];
-    public Sprite[] Stages
+    public Sprite[] StageSprites
     {
         get => stages;
     }

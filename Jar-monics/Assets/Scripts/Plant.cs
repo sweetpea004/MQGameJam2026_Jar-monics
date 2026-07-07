@@ -75,25 +75,25 @@ public class Plant : Item
         switch (type)
         {
             case PlantType.Fern:
-                sprite.sprite = SOManager.Instance.GetPlant(type).Stages[stage];
+                sprite.sprite = SOManager.Instance.GetPlant(type).StageSprites[stage];
                 break;
             case PlantType.Succulent:
-                sprite.sprite = SOManager.Instance.GetPlant(type).Stages[stage];
+                sprite.sprite = SOManager.Instance.GetPlant(type).StageSprites[stage];
                 break;
             case PlantType.Cactus:
-                sprite.sprite = SOManager.Instance.GetPlant(type).Stages[stage];
+                sprite.sprite = SOManager.Instance.GetPlant(type).StageSprites[stage];
                 break;
             case PlantType.Moss:
-                sprite.sprite = SOManager.Instance.GetPlant(type).Stages[stage];
+                sprite.sprite = SOManager.Instance.GetPlant(type).StageSprites[stage];
                 break;
             case PlantType.Foliage:
                 if (stage < 2 || tonality == Tonality.Neutral || tonality == Tonality.Major)
                 {
-                    sprite.sprite = SOManager.Instance.GetPlant(type).Stages[stage];
+                    sprite.sprite = SOManager.Instance.GetPlant(type).StageSprites[stage];
                 }
                 else
                 {
-                    sprite.sprite = SOManager.Instance.GetPlant(type).Stages[stage + 1];
+                    sprite.sprite = SOManager.Instance.GetPlant(type).StageSprites[stage + 1];
                 }
 
                 break;

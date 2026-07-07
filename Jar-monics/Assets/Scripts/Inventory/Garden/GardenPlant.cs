@@ -28,7 +28,7 @@ public class GardenPlant : MonoBehaviour
     }
     private void Start()
     {
-        renderer.sprite = SOManager.Instance.GetPlant(type).Stages[stage];
+        renderer.sprite = SOManager.Instance.GetPlant(type).StageSprites[stage];
     }
 
     private void Update()
@@ -58,7 +58,7 @@ public class GardenPlant : MonoBehaviour
             Debug.Log(value);
             SetStage(value);
         }
-        renderer.sprite = plant.Stages[GetStage];
+        renderer.sprite = plant.StageSprites[GetStage];
     }
 
     public Plant GetItem()
