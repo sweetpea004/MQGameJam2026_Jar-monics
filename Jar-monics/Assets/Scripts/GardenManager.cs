@@ -80,9 +80,5 @@ public class GardenManager : MonoBehaviour
             InventorySystem.Instance.AddItemOne(plot.GetPlant.GetItem());
             plot.RemovePlant();
         }
-        if (type == ToolType.WATERINGCAN)
-        {
-            plot.GetPlant.AdvanceStage();
-        }
     }
 }

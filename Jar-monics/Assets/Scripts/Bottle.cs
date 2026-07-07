@@ -17,7 +17,7 @@ public class Bottle : Item
         plantSpots[1] = new Vector3(0, -1.5f);
 
 
-        for(int i = 0; i < occupancies.Length; i++)
+        for (int i = 0; i < occupancies.Length; i++)
         {
             occupancies[i] = false;
         }
