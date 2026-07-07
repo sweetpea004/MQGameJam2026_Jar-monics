@@ -7,7 +7,7 @@ public class Plant : Item
     private PlantType type;
     private SpriteRenderer sprite;
 
-    private int stage = 0;
+    [SerializeField] private int stage = 0;
     private int maxStage = 4; //All but two plants have 4 stages, the other two have had this value changed in Awake()
     private bool isFoliageMaj;
     
@@ -15,7 +15,7 @@ public class Plant : Item
     protected new void Awake()
     {
         base.Awake();
-        type = PlantType.Fern;        
+        type = PlantType.Foliage;        
 
         
         switch (type)
@@ -45,12 +45,12 @@ public class Plant : Item
         SetSprite();
     }
 
-    public void Initialise(PlantType t)
+    public void Initialise(PlantType t, bool isMajor)
     {
         type = t;
         if(t == PlantType.Foliage)
         {
-            
+            isFoliageMaj = isMajor;
         }
     }
 
@@ -101,6 +101,11 @@ public class Plant : Item
     void Start()
     {
         
+    }
+
+    void FixedUpdate()
+    {
+        SetSprite();
     }
 
     // Update is called once per frame
