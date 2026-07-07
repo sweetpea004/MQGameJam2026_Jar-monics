@@ -13,21 +13,10 @@ MonoBehaviour:
   m_Name: Cactus
   m_EditorClassIdentifier: Assembly-CSharp::PlantStage
   stages:
-<<<<<<< HEAD
   - {fileID: -4457195412385292235, guid: 2a0a07eefbf5ff34d8808af7127a7fcf, type: 3}
   - {fileID: -6733257023842972861, guid: 5a769cc5673c3cf46be22174da0189d0, type: 3}
   - {fileID: 7394362943342045423, guid: 1f10190dc8164914da2333bb74ab70d8, type: 3}
   - {fileID: 4918488075291149019, guid: ba7eea263d341ff4c8b8154dc2164e19, type: 3}
-  prefabs:
-  - {fileID: 2991459616567286968, guid: aece46b0645ccc24c8f461dd39841eac, type: 3}
-  - {fileID: 4824166516486376452, guid: cb3fdd522c59f934f9696f290ed05909, type: 3}
-  - {fileID: 992723952440441257, guid: cab91343b50813840b3aa3424950b1f1, type: 3}
-  - {fileID: 784520930720017900, guid: 56b81d2ac036411499f1d6c9cfae5eca, type: 3}
-=======
-  - {fileID: -855298285791758126, guid: 84112fa86f5f71b4380edc0d65c9f6e1, type: 3}
-  - {fileID: 6937817954938267909, guid: b74de6af9b6b28a4c8139f9c1b11577f, type: 3}
-  - {fileID: -6470460504253458178, guid: 41345e87f7e8a314096a7e17bfa89f9d, type: 3}
-  - {fileID: -4178046375966092550, guid: 414efbb6b67e1b64fac680daa6d23dc3, type: 3}
   minorTracks:
   - {fileID: 8300000, guid: 675137ef1987f13818d55990ece087fb, type: 3}
   - {fileID: 8300000, guid: 2f466c9dba45561a39a69b2047a18cd7, type: 3}
@@ -43,4 +32,3 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2f466c9dba45561a39a69b2047a18cd7, type: 3}
   - {fileID: 8300000, guid: bc003c7949ed88c14a2cca5df197a88e, type: 3}
   - {fileID: 8300000, guid: d99f0c76f87f6ed35bdaaee86ff73153, type: 3}
->>>>>>> 1bc4d69 (Added Major, Minor and Neutral track sets for each plant type)

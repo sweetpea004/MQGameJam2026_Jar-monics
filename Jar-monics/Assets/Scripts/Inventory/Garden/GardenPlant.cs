@@ -64,7 +64,7 @@ public class GardenPlant : MonoBehaviour
     public Plant GetItem()
     {
         Debug.Log("st" + this.GetStage);
-        Plant plat = SOManager.Instance.GetPlant(type).Prefab[stage].GetComponent<Plant>();
+        Plant plat = SOManager.Instance.GetPlant(type).Prefab.GetComponent<Plant>();
         Debug.Log("st" + this.stage);
         plat.Stage = this.stage;
         return plat;

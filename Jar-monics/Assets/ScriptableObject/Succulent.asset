@@ -16,12 +16,6 @@ MonoBehaviour:
   - {fileID: -855298285791758126, guid: aeb21db13b24a06419b4feff9dd7c858, type: 3}
   - {fileID: 6937817954938267909, guid: a56af4330a319ce4a8c37482d99ef033, type: 3}
   - {fileID: -6470460504253458178, guid: 1a9d18ea27f2e07428a5a4f1cf17e05b, type: 3}
-<<<<<<< HEAD
-  prefabs:
-  - {fileID: 4324865575133318968, guid: a918ac586e4b5fa49beac92708cf2c85, type: 3}
-  - {fileID: 1517621214850115805, guid: 082e142703dbc454d896bece25a6bb0b, type: 3}
-  - {fileID: 7356701741135205981, guid: 0c7d5e4b2488b1a4f98abe2430d6d70e, type: 3}
-=======
   minorTracks:
   - {fileID: 8300000, guid: e5fd7a5dd7dca4594a2c5a3bc194840f, type: 3}
   - {fileID: 8300000, guid: 4652efb13422c18d68b6135451ac387f, type: 3}
@@ -34,4 +28,3 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 4800e5605c7a58c0a84f149e2f514991, type: 3}
   - {fileID: 8300000, guid: 46c683fe9c542aec3bd11a82056a3219, type: 3}
   - {fileID: 8300000, guid: c53a45db235340164a4fc614ffbc1fdc, type: 3}
->>>>>>> 1bc4d69 (Added Major, Minor and Neutral track sets for each plant type)

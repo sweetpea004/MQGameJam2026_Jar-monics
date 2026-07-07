@@ -13,21 +13,10 @@ MonoBehaviour:
   m_Name: Fern
   m_EditorClassIdentifier: Assembly-CSharp::PlantStage
   stages:
-<<<<<<< HEAD
   - {fileID: -3496024304377630505, guid: 7886653445990fc4a8858ce0a309b85d, type: 3}
   - {fileID: 3487324818055935173, guid: 2ef8f970d3af0604d919920998be928e, type: 3}
   - {fileID: -5268041163968221761, guid: e7b38aa7e6f6cae4283c5082f1c8840b, type: 3}
   - {fileID: -3938832179194803483, guid: 303f6a6ecc1a70946a1b3d8f44a458ec, type: 3}
-  prefabs:
-  - {fileID: 453860986615482233, guid: 382ea927f0977d347ab91bf30e77d90f, type: 3}
-  - {fileID: 9023333504155594333, guid: f0fc5a49ad15526448de3851e4b008d7, type: 3}
-  - {fileID: 226252815595336713, guid: bf2f64609d0406245b7a6a8c81ee9fd3, type: 3}
-  - {fileID: 7546347198708017662, guid: 28c6975f448b1c04bbf55abaf767ec6c, type: 3}
-=======
-  - {fileID: -855298285791758126, guid: 0b8673a0d0689ae4ebb21243a2ec1799, type: 3}
-  - {fileID: 6937817954938267909, guid: f8ba87860437c1f4bb9999b0da8c33c6, type: 3}
-  - {fileID: -6470460504253458178, guid: 376aa823056845441aa5155d5f4effaa, type: 3}
-  - {fileID: -4178046375966092550, guid: 0b850388a76dc9741b1384255d1aefc2, type: 3}
   minorTracks:
   - {fileID: 8300000, guid: 4c9569367754864a78dccac52d3b135b, type: 3}
   - {fileID: 8300000, guid: 9c488b464d63d1285a511e8b8ce86708, type: 3}
@@ -43,4 +32,3 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 222d69a58b28f8d839ed50370956310c, type: 3}
   - {fileID: 8300000, guid: 278b8fc2715639dd0bbcd308241095bd, type: 3}
   - {fileID: 8300000, guid: 3790b8238e966747d984c7a11090c390, type: 3}
->>>>>>> 1bc4d69 (Added Major, Minor and Neutral track sets for each plant type)
