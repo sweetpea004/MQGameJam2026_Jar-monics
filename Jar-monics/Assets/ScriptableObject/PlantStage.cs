@@ -3,21 +3,15 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "PlantStage", menuName = "Scriptable Objects/PlantStage")]
 public class PlantStage : ScriptableObject
 {
-    [SerializeField] private GameObject prefab;
-    public GameObject Prefab
+    [SerializeField] private int maxStage;
+    public int MaxStage
     {
         get
         {
-            return prefab;
+            return maxStage;
         }
     }
-    public int MaxStages
-    {
-        get => stages.Length;
-    }
-
     [SerializeField] private Sprite[] stages = new Sprite[4];
-    // [SerializeField] private GameObject[] prefabs = new GameObject[4];
     public Sprite[] StageSprites
     {
         get => stages;

@@ -12,17 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5c66dbcba6f5ee4d9566e7b66c92236, type: 3}
   m_Name: Foliage
   m_EditorClassIdentifier: Assembly-CSharp::PlantStage
-  prefab: {fileID: 4419529992849132348, guid: 19bc4c33e5a091e47b232ca70fa693d7, type: 3}
+  maxStage: 2
   stages:
   - {fileID: 7536458381352112627, guid: 458378df980246e458d2a3378fd842e4, type: 3}
   - {fileID: -8728439389244122734, guid: a84217b6193304b45bbd808cf64f65fe, type: 3}
   - {fileID: -9105386156181285351, guid: 3ee3fa6d463e4324b99176cf1dd4431a, type: 3}
   - {fileID: -1568637543657111260, guid: 3f0f11d7a26309743bf6f2b13a0dcb8a, type: 3}
-  prefabs:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   minorTracks:
   - {fileID: 8300000, guid: 6118991506340e79fa02983c80ea2036, type: 3}
   - {fileID: 8300000, guid: f420e0efda5a06b66ba7061ec3af4679, type: 3}

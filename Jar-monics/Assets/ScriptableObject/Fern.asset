@@ -12,17 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5c66dbcba6f5ee4d9566e7b66c92236, type: 3}
   m_Name: Fern
   m_EditorClassIdentifier: Assembly-CSharp::PlantStage
-  prefab: {fileID: 4419529992849132348, guid: 19bc4c33e5a091e47b232ca70fa693d7, type: 3}
+  maxStage: 3
   stages:
   - {fileID: -3496024304377630505, guid: 7886653445990fc4a8858ce0a309b85d, type: 3}
   - {fileID: 3487324818055935173, guid: 2ef8f970d3af0604d919920998be928e, type: 3}
   - {fileID: -5268041163968221761, guid: e7b38aa7e6f6cae4283c5082f1c8840b, type: 3}
   - {fileID: -3938832179194803483, guid: 303f6a6ecc1a70946a1b3d8f44a458ec, type: 3}
-  prefabs:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   minorTracks:
   - {fileID: 8300000, guid: 4c9569367754864a78dccac52d3b135b, type: 3}
   - {fileID: 8300000, guid: 9c488b464d63d1285a511e8b8ce86708, type: 3}

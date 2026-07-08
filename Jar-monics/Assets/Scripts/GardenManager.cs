@@ -11,7 +11,7 @@ public class GardenManager : MonoBehaviour
         {
             if (singleton == null)
             {
-                Debug.LogError("uh oh");
+                Debug.Log("uh oh");
             }
             return singleton;
         }
@@ -79,7 +79,7 @@ public class GardenManager : MonoBehaviour
         if (type == ToolType.TROWEL)
         {
             Plant item = plot.GetPlant.GetItem();
-            item.Init(plot.GetPlant.GetPlantType);
+            item.Init(plot.GetPlant.GetPlantType, item.Stage);
             item.name = item.PlantName;
             Debug.Log("digging up " + item.name);
             InventorySystem.Instance.AddItemOne(item);

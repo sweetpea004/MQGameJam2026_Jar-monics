@@ -2,9 +2,11 @@ using System;
 using Unity.VisualScripting;
 using UnityEngine;
 
+
+[RequireComponent(typeof(SpriteRenderer))]
+[RequireComponent(typeof(Rigidbody2D))]
 public class Plant : Item
 {
-    private String plantTypeString;
     [SerializeField] private PlantType type;
     public PlantType Type
     {
@@ -45,20 +47,19 @@ public class Plant : Item
     [SerializeField] private Tonality tonality = Tonality.Neutral;
 
 
-    protected void Start()
+    protected new void Awake()
     {
         switch (type)
         {
-            case PlantType.Fern:
-            case PlantType.Cactus:
-            case PlantType.Moss:
-                break;
             case PlantType.Succulent:
+                maxStage = 3;
+                break;
             case PlantType.Foliage:
                 maxStage = 3;
-
                 break;
         }
+
+        Debug.Log(gameObject.GetComponent<SpriteRenderer>() == null);
 
         sprite = gameObject.GetComponent<SpriteRenderer>();
         audio = gameObject.GetComponent<AudioSource>();
@@ -67,10 +68,10 @@ public class Plant : Item
         SetMusic();
     }
 
-    public void Init(PlantType t)
+    public void Init(PlantType t, int stage)
     {
         type = t;
-        Start();
+        this.stage = stage;
     }
 
     void SetSprite()

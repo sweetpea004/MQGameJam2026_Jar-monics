@@ -11,7 +11,7 @@ public class InventorySystem : MonoBehaviour
     {
       if (singleton == null)
       {
-        Debug.LogError("uh oh");
+        Debug.Log("uh oh");
       }
       return singleton;
     }

@@ -12,17 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5c66dbcba6f5ee4d9566e7b66c92236, type: 3}
   m_Name: Moss
   m_EditorClassIdentifier: Assembly-CSharp::PlantStage
-  prefab: {fileID: 4419529992849132348, guid: 19bc4c33e5a091e47b232ca70fa693d7, type: 3}
+  maxStage: 3
   stages:
   - {fileID: -8411124513484026158, guid: 727323265b5d4ea46b3bcaaea1d0ed59, type: 3}
   - {fileID: -2048410178766304379, guid: 0a98c2d88029b43479c1329ec2e7f846, type: 3}
   - {fileID: 6319811441028266567, guid: 4a597b118e9a5984ebc20cb0f8df2642, type: 3}
   - {fileID: 3694456746244492996, guid: a02025433728eb14c936815f8aaa32da, type: 3}
-  prefabs:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   minorTracks:
   - {fileID: 8300000, guid: 30ff48237ad808f36b9e575fde03e563, type: 3}
   - {fileID: 8300000, guid: 2cda73326b1f1e815879782402e19958, type: 3}

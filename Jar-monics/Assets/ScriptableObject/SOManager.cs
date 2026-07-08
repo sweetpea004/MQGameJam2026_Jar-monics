@@ -9,14 +9,24 @@ public class SOManager : MonoBehaviour
         {
             if (singleton == null)
             {
-                Debug.LogError("uh oh");
+                Debug.Log("uh oh");
             }
             return singleton;
         }
     }
 
+    [SerializeField] private GameObject prefab;
+    public GameObject Prefab
+    {
+        get
+        {
+            return prefab;
+        }
+    }
+
     private void Awake()
     {
+        Debug.Log("Creating SOManager");
         if (singleton == null)
         {
             //assign

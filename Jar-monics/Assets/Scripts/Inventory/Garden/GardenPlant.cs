@@ -51,27 +51,43 @@ public class GardenPlant : MonoBehaviour
 
     public void AdvanceStage()
     {
+
         PlantStage plant = SOManager.Instance.GetPlant(type);
-        SetStage(GetStage + 1);
-        SetStage(Mathf.Min(GetStage, plant.MaxStages - 1));
-        Debug.Log(GetStage);
-        if (type == PlantType.Foliage && GetStage > 2)
+
+        Debug.Log("Advance");
+        if(GetStage < plant.MaxStage)
         {
-            Debug.Log("random");
-            int value = Random.Range(3, 4); //randomness;
-            Debug.Log(value);
-            SetStage(value);
-        }
-        renderer.sprite = plant.StageSprites[GetStage];
+            SetStage(GetStage + 1);
+
+            Debug.Log(GetStage);
+            if(GetPlantType == PlantType.Foliage && GetStage > 1)
+            {
+                Debug.Log("random");
+                int value = 0;
+                if(Time.frameCount % 2 == 0)
+                {
+                    value = 2;
+                }
+                else
+                {
+                    value = 3;
+                }
+                Debug.Log(value);
+                SetStage(value);
+            }
+
+            renderer.sprite = plant.StageSprites[GetStage];
+        }        
     }
 
     public Plant GetItem()
     {
 
-        Plant plat = SOManager.Instance.GetPlant(type).Prefab.GetComponent<Plant>();
-        plat.PlantName = string.Format("{0}-Stage{1}", type, stage);
-        plat.Type = type;
-        plat.Stage = stage;
-        return plat;
+        GameObject obj = Instantiate(SOManager.Instance.Prefab);
+        Plant plant = obj.GetComponent<Plant>();
+        plant.PlantName = string.Format("{0}-Stage{1}", type, stage);
+        plant.Type = type;
+        plant.Stage = stage;
+        return plant;
     }
 }

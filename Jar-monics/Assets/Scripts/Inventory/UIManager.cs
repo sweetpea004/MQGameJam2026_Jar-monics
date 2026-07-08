@@ -18,7 +18,7 @@ public class UIManager : MonoBehaviour
         {
             if (singleton == null)
             {
-                Debug.LogError("uh oh");
+                Debug.Log("uh oh");
             }
             return singleton;
         }
@@ -133,12 +133,12 @@ public class UIManager : MonoBehaviour
 
             ItemSpawner sp = spawner.GetComponent<ItemSpawner>();
 
-            GameObject plant = pStage.Prefab;
+            /* GameObject plant = pStage.Prefab;
             Plant obj = plant.GetComponent<Plant>();
             obj.Init(plantScript.Type);
 
             sp.SetSpawned(pStage.Prefab); //set to prefab
-            sp.SetParent(demoParentRoom); //setup room
+            sp.SetParent(demoParentRoom); //setup room */
 
 
         }

@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
         {
             if (singleton == null)
             {
-                Debug.LogError("uh oh");
+                Debug.Log("uh oh");
             }
             return singleton;
         }
