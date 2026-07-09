@@ -7,6 +7,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(InventorySystem), typeof(SOManager))]
 public class GameManager : MonoBehaviour
 {
+    private AudioSource audio;
     private static GameManager singleton;
     public static GameManager Instance
     {
@@ -78,8 +79,7 @@ public class GameManager : MonoBehaviour
         PauseAction = actions.Player.Pause;
 
         PauseAction.performed += PauseGame;
-
-
+        
         cam = Camera.main;
 
         Button startButton = start.GetComponent<Button>();

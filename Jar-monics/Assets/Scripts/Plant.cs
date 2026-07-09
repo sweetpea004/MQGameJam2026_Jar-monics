@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -44,7 +45,7 @@ public class Plant : Item
         }
     }
     private int maxStage = 4; //All but two plants have 4 stages, the other two have had this value changed in Awake()
-    [SerializeField] private Tonality tonality = Tonality.Neutral;
+    [SerializeField] private Tonality tonality = Tonality.Major;
 
 
     protected new void Awake()
@@ -59,6 +60,8 @@ public class Plant : Item
                 break;
         }
 
+
+
         Debug.Log(gameObject.GetComponent<SpriteRenderer>() == null);
 
         sprite = gameObject.GetComponent<SpriteRenderer>();
@@ -66,6 +69,14 @@ public class Plant : Item
 
         SetSprite();
         SetMusic();
+
+        List<Plant> allPlants = new List<Plant>();
+
+        foreach(Plant plant in allPlants)
+        {
+            plant.PlayMusic();
+        }
+        PlayMusic();
     }
 
     public void Init(PlantType t, int stage)
@@ -124,6 +135,7 @@ public class Plant : Item
 
     public void PlayMusic()
     {
+        audio.time = 0;
         audio.Play();
     }
 
