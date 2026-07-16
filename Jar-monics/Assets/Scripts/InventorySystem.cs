@@ -213,6 +213,16 @@ public class InventorySystem : MonoBehaviour
   {
     Debug.Log(string.Join<ItemElement>(", ", arrayntorySystem));
   }
+
+  [SerializeField] public List<Item> itemCache = new List<Item>();
+  public void AddToCache(Item item)
+  {
+    if (itemCache.Contains(item))
+    {
+      return;
+    }
+    itemCache.Add(item);
+  }
 }
 
 

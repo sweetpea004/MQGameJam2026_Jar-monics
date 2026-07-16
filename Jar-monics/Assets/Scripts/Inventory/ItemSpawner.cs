@@ -14,7 +14,6 @@ public class ItemSpawner : MonoBehaviour
     {
         parentRoom = obj;
     }
-    private Point point;
     private BoxCollider2D box;
 
     private void Awake()
@@ -25,10 +24,11 @@ public class ItemSpawner : MonoBehaviour
             Debug.LogError("cannot spawn this object");
         }
     }
-    private void Start()
+
+    public void Initialize(GameObject spawnItem)
     {
-        GameObject pointObj = Instantiate(GameManager.Instance.GetPointObj, transform.position, Quaternion.identity, transform);
-        point = pointObj.GetComponent<Point>();
+        spawned = spawnItem;
+        GetComponentInChildren<UnityEngine.UI.Image>().sprite = spawned.GetComponentInChildren<SpriteRenderer>().sprite;
     }
 
     private void Update()
@@ -38,7 +38,9 @@ public class ItemSpawner : MonoBehaviour
         if (GameManager.Instance.ClickMouse.WasPressedThisFrame() && box.OverlapPoint(GameManager.Instance.ViewportMousePos))
         {
             //do stuff
-            GameObject obj = Instantiate(spawned, GameManager.Instance.WorldMousePos, Quaternion.identity, parentRoom.transform);
+            Debug.Log("creating physical item: " + spawned.name);
+            GameObject obj = Instantiate(spawned, GameManager.Instance.WorldMousePos, Quaternion.identity, null);
+            obj.name = spawned.name.Insert(0, "GO");
             Item item = obj.GetComponent<Item>();
             item.SetDragging(true);
             // item.SetLastPoint(point);

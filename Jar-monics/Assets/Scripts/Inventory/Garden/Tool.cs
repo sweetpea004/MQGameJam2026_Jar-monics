@@ -6,7 +6,6 @@ public class Tool : Item
     protected void Start()
     {
         SetInfinity(true);
-        SetLerpingToPoints(false);
     }
     public override void OnItemReleased()
     {
@@ -21,7 +20,7 @@ public class Tool : Item
 
 public enum ToolType
 {
-    UNASSIGNED, 
+    UNASSIGNED,
     TROWEL,
     WATERINGCAN
 }

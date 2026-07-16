@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UIElements;
+using System.Linq;
 
 public class UIManager : MonoBehaviour
 {
@@ -119,6 +120,8 @@ public class UIManager : MonoBehaviour
             Destroy(child.gameObject);
         }
 
+        Debug.Log("UIM: " + string.Join<ItemElement>(", ", array));
+
         foreach (ItemElement item in array)
         {
             if (item == null)
@@ -126,12 +129,20 @@ public class UIManager : MonoBehaviour
                 continue;
             }
             GameObject spawner = Instantiate(blankSpawner, transform.position, Quaternion.identity, plantPanel.transform);
-
-            Plant plantScript = item.GetPlantItem as Plant; //turn the item script to a plant script
-
-            PlantStage pStage = SOManager.Instance.GetPlant(plantScript.Type); //find the scriptableObject
-
             ItemSpawner sp = spawner.GetComponent<ItemSpawner>();
+
+
+            Plant invPlantScript = item.GetItem as Plant; //turn the item script to a plant script
+            Debug.Log(invPlantScript.name);
+
+            spawner.name = invPlantScript.name.Insert(0, "S");
+
+            Item itemScript = InventorySystem.Instance.itemCache.Find(item => item.name.Equals(invPlantScript.name));
+            sp.Initialize(itemScript.gameObject); //now has been edited
+
+
+
+
 
             /* GameObject plant = pStage.Prefab;
             Plant obj = plant.GetComponent<Plant>();

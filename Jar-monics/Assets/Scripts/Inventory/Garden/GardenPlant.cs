@@ -3,16 +3,13 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public class GardenPlant : MonoBehaviour
 {
-    private int stage = 0;
+    private int stage;
     public int GetStage
     {
         get => stage;
     }
-    public void SetStage(int value)
-    {
-        Debug.Log("GP set stage " + value);
-        stage = value;
-    }
+
+
     [SerializeField] private PlantType type;
     public void ChangeType(PlantType newType)
     {
@@ -22,6 +19,8 @@ public class GardenPlant : MonoBehaviour
     {
         get => type;
     }
+
+
     private new SpriteRenderer renderer;
     private BoxCollider2D box;
 
@@ -32,62 +31,63 @@ public class GardenPlant : MonoBehaviour
     }
     private void Start()
     {
+        if (!hasBeenInitCorrectly)
+        {
+            Debug.LogError("garden plant has not been created properly");
+        }
         renderer.sprite = SOManager.Instance.GetPlant(type).StageSprites[stage];
-    }
 
-    private void Update()
+    }
+    private bool hasBeenInitCorrectly = false;
+    public void Initialize(int stageValue, PlantType plantType)
     {
-        if (GameManager.Instance.ClickMouse.WasPressedThisFrame() && box.OverlapPoint(GameManager.Instance.WorldMousePos))
-        {
-            AdvanceStage();
-        }
+        hasBeenInitCorrectly = true;
 
-
-        if (GameManager.Instance.ClickMouse.WasReleasedThisFrame())
-        {
-
-        }
+        stage = stageValue;
+        type = plantType;
+        gameObject.name = string.Format("Garden{0}-Stage{1}", type, stage);
     }
+
 
     public void AdvanceStage()
     {
-
         PlantStage plant = SOManager.Instance.GetPlant(type);
 
-        Debug.Log("Advance");
-        if(GetStage < plant.MaxStage)
+        Debug.Log("Advanced");
+        if (GetStage < plant.MaxStage)
         {
-            SetStage(GetStage + 1);
+            stage++;
 
-            Debug.Log(GetStage);
-            if(GetPlantType == PlantType.Foliage && GetStage > 1)
+            //rng plant
+            if (type == PlantType.Foliage && stage > 1)
             {
                 Debug.Log("random");
-                int value = 0;
-                if(Time.frameCount % 2 == 0)
+                int value = 3;
+                if (Time.frameCount % 2 == 0)
                 {
                     value = 2;
                 }
-                else
-                {
-                    value = 3;
-                }
                 Debug.Log(value);
-                SetStage(value);
+                stage = value;
             }
 
             renderer.sprite = plant.StageSprites[GetStage];
-        }        
+        }
     }
-
-    public Plant GetItem()
+    public Plant CreatePlantItem()
     {
-
-        GameObject obj = Instantiate(SOManager.Instance.Prefab);
+        GameObject obj = Instantiate(GardenManager.Instance.GetBlankPlantObj, InventorySystem.Instance.transform);
         Plant plant = obj.GetComponent<Plant>();
-        plant.PlantName = string.Format("{0}-Stage{1}", type, stage);
-        plant.Type = type;
-        plant.Stage = stage;
+        plant.Initialize(type, stage);
+
+        InventorySystem.Instance.AddToCache(plant);
+
         return plant;
+        // GameObject obj = Instantiate(SOManager.Instance.Prefab);
+        // Plant plant = obj.GetComponent<Plant>();
+        // plant.PlantName = string.Format("{0}-Stage{1}", type, stage);
+        // plant.Type = type;
+        // plant.Stage = stage;
+        // return plant;
     }
 }

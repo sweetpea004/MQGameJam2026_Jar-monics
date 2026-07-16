@@ -187,6 +187,7 @@ MonoBehaviour:
   lerpSpeed: 10
   lastPoint: {fileID: 0}
   shouldLerpToPoint: 0
+  plant: 0
 --- !u!50 &6125212214466743736
 Rigidbody2D:
   serializedVersion: 5

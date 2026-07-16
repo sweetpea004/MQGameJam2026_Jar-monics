@@ -3,6 +3,12 @@ using UnityEngine;
 public class GardenManager : MonoBehaviour
 {
     [SerializeField] private GardenPlot[] groundPlots;
+    [SerializeField] private GameObject blankGardenPlantPrefab;
+    [SerializeField] private GameObject blankPlantPrefab;
+    public GameObject GetBlankPlantObj
+    {
+        get => blankPlantPrefab;
+    }
 
     private static GardenManager singleton;
     public static GardenManager Instance
@@ -11,7 +17,7 @@ public class GardenManager : MonoBehaviour
         {
             if (singleton == null)
             {
-                Debug.Log("uh oh");
+                Debug.Log("uh oh (garden manager)");
             }
             return singleton;
         }
@@ -57,35 +63,30 @@ public class GardenManager : MonoBehaviour
         }
     }
 
-    [SerializeField] private GameObject gardenPlant;
     private void PlantSeed(GardenPlot plot, PlantType type)
     {
-        GardenPlant plant = gardenPlant.GetComponent<GardenPlant>();
-        plant.ChangeType(type);
-        
-        plot.SetPlant(plant);
-        Instantiate(gardenPlant, plot.transform.position, Quaternion.identity, plot.transform);
+        GameObject plantObj = Instantiate(blankGardenPlantPrefab, plot.transform.position, Quaternion.identity, plot.transform);
+        GardenPlant plantScript = plantObj.GetComponent<GardenPlant>();
+        plantScript.Initialize(0, type);
+
+        plot.SetPlant(plantScript);
     }
-
-
     private void UseTool(GardenPlot plot, ToolType type)
     {
         if (plot.GetPlant == null)
         {
-            Debug.LogError("no plant planeted here");
+            Debug.LogError("no plant planted here");
             return;
         }
 
         if (type == ToolType.TROWEL)
         {
-            Plant item = plot.GetPlant.GetItem();
-            item.Init(plot.GetPlant.GetPlantType, item.Stage);
-            item.name = item.PlantName;
+            Plant item = plot.GetPlant.CreatePlantItem();
             Debug.Log("digging up " + item.name);
             InventorySystem.Instance.AddItemOne(item);
             plot.RemovePlant();
         }
-        if(type == ToolType.WATERINGCAN)
+        if (type == ToolType.WATERINGCAN)
         {
             plot.GetPlant.AdvanceStage();
         }

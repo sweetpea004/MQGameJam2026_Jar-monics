@@ -9,18 +9,9 @@ public class SOManager : MonoBehaviour
         {
             if (singleton == null)
             {
-                Debug.Log("uh oh");
+                Debug.Log("uh oh - SOmanager");
             }
             return singleton;
-        }
-    }
-
-    [SerializeField] private GameObject prefab;
-    public GameObject Prefab
-    {
-        get
-        {
-            return prefab;
         }
     }
 

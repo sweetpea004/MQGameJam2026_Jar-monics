@@ -1,119 +1,60 @@
-using System;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 
-[RequireComponent(typeof(SpriteRenderer))]
-[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Rigidbody2D), typeof(AudioSource))]
 public class Plant : Item
 {
     [SerializeField] private PlantType type;
-    public PlantType Type
+    public PlantType GetPlantType
     {
-        get
-        {
-            return type;
-        }
-        set
-        {
-            type = value;
-        }
+        get => type;
     }
-    [SerializeField] private string plantName;
-    public string PlantName
+    [SerializeField] private int stage;
+    public int GetStage
     {
-        get => plantName;
-        set => plantName = value;
+        get => stage;
+    }
 
-    }
-    private SpriteRenderer sprite;
     private AudioSource audio;
 
-    [SerializeField] private int stage = 0;
-    public int Stage
+    private bool constructedProperly = false;
+
+    [SerializeField] private readonly Tonality tonality = Tonality.Major;
+
+    public void Initialize(PlantType plantType, int stageValue)
     {
-        get
+        type = plantType;
+        stage = stageValue;
+        constructedProperly = true;
+
+        gameObject.name = string.Format("{0}-Stage{1}", type, stage);
+
+        SpriteRenderer spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        if (spriteRenderer == null)
         {
-            return stage;
+            Debug.LogError("plant script has no renderer");
+            return;
+        }
+        spriteRenderer.sprite = SOManager.Instance.GetPlant(type).StageSprites[stage]; //set image
+
+        //set bounding box size
+        Vector3 spriteSize = spriteRenderer.sprite.bounds.size;
+        spriteSize = Vector3.Scale(spriteSize, spriteRenderer.transform.localScale);
+
+        BoxCollider2D collider = GetComponent<BoxCollider2D>();
+        collider.size = spriteSize;
+        collider.offset = Vector2.up * spriteSize.y / 2f;
+
+        if (type == PlantType.Foliage && stage > 2 && tonality != Tonality.Minor)
+        {
+            spriteRenderer.sprite = SOManager.Instance.GetPlant(type).StageSprites[stage + 1];
         }
 
-        set
-        {
-            Debug.Log("setting stage to " + value);
-            stage = value;
-        }
-    }
-    private int maxStage = 4; //All but two plants have 4 stages, the other two have had this value changed in Awake()
-    [SerializeField] private Tonality tonality = Tonality.Major;
 
-
-    protected new void Awake()
-    {
-        switch (type)
-        {
-            case PlantType.Succulent:
-                maxStage = 3;
-                break;
-            case PlantType.Foliage:
-                maxStage = 3;
-                break;
-        }
-
-
-
-        Debug.Log(gameObject.GetComponent<SpriteRenderer>() == null);
-
-        sprite = gameObject.GetComponent<SpriteRenderer>();
         audio = gameObject.GetComponent<AudioSource>();
-
-        SetSprite();
         SetMusic();
-
-        List<Plant> allPlants = new List<Plant>();
-
-        foreach(Plant plant in allPlants)
-        {
-            plant.PlayMusic();
-        }
-        PlayMusic();
     }
 
-    public void Init(PlantType t, int stage)
-    {
-        type = t;
-        this.stage = stage;
-    }
-
-    void SetSprite()
-    {
-        switch (type)
-        {
-            case PlantType.Fern:
-                sprite.sprite = SOManager.Instance.GetPlant(type).StageSprites[stage];
-                break;
-            case PlantType.Succulent:
-                sprite.sprite = SOManager.Instance.GetPlant(type).StageSprites[stage];
-                break;
-            case PlantType.Cactus:
-                sprite.sprite = SOManager.Instance.GetPlant(type).StageSprites[stage];
-                break;
-            case PlantType.Moss:
-                sprite.sprite = SOManager.Instance.GetPlant(type).StageSprites[stage];
-                break;
-            case PlantType.Foliage:
-                if (stage < 2 || tonality == Tonality.Neutral || tonality == Tonality.Major)
-                {
-                    sprite.sprite = SOManager.Instance.GetPlant(type).StageSprites[stage];
-                }
-                else
-                {
-                    sprite.sprite = SOManager.Instance.GetPlant(type).StageSprites[stage + 1];
-                }
-
-                break;
-        }
-    }
 
     void SetMusic()
     {
@@ -144,28 +85,12 @@ public class Plant : Item
         audio.Stop();
     }
 
-    void Grow()
-    {
-        if (stage < maxStage)
-        {
-            stage++;
-        }
-
-        SetSprite();
-    }
-
-    void FixedUpdate()
-    {
-        SetSprite();
-    }
-
-    // Update is called once per frame
-    protected new void Update()
-    {
-    }
     public override void OnItemSelected()
     {
-        base.Update();
+        if (!constructedProperly)
+        {
+            Debug.LogError("not created properly - plant ");
+        }
     }
 
     public override void OnItemReleased()

@@ -7,7 +7,6 @@ public class Seed : Item
     protected void Start()
     {
         SetInfinity(true);
-        SetLerpingToPoints(false);
     }
     public override void OnItemReleased()
     {
