@@ -10,6 +10,11 @@ public class GardenManager : MonoBehaviour
         get => blankPlantPrefab;
     }
 
+    private AudioSource audioSource;
+    [SerializeField] private AudioClip blopSound;
+    [SerializeField] private AudioClip wateringSound;
+    [SerializeField] private AudioClip trowelSound;
+
     private static GardenManager singleton;
     public static GardenManager Instance
     {
@@ -36,6 +41,7 @@ public class GardenManager : MonoBehaviour
         }
 
         groundPlots = FindObjectsByType<GardenPlot>(FindObjectsInactive.Include, FindObjectsSortMode.InstanceID);
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void AnyTouches(BoxCollider2D collider, PlantType type)
@@ -48,6 +54,8 @@ public class GardenManager : MonoBehaviour
             {
                 Debug.Log("attempting to plant seed");
                 PlantSeed(plot, type);
+                // Sound Effect
+                audioSource.PlayOneShot(blopSound);
             }
         }
     }
@@ -85,10 +93,14 @@ public class GardenManager : MonoBehaviour
             Debug.Log("digging up " + item.name);
             InventorySystem.Instance.AddItemOne(item);
             plot.RemovePlant();
+            // Sound Effect
+            audioSource.PlayOneShot(trowelSound);
         }
         if (type == ToolType.WATERINGCAN)
         {
             plot.GetPlant.AdvanceStage();
+            // Sound Effect
+            audioSource.PlayOneShot(wateringSound);
         }
     }
 }
