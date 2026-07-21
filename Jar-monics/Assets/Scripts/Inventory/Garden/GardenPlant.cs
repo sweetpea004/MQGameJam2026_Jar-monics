@@ -82,6 +82,8 @@ public class GardenPlant : MonoBehaviour
 
         InventorySystem.Instance.AddToCache(plant);
 
+        obj.SetActive(false);
+
         return plant;
         // GameObject obj = Instantiate(SOManager.Instance.Prefab);
         // Plant plant = obj.GetComponent<Plant>();

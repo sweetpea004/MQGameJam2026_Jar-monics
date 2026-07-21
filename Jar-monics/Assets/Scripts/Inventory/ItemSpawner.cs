@@ -41,6 +41,7 @@ public class ItemSpawner : MonoBehaviour
             Debug.Log("creating physical item: " + spawned.name);
             GameObject obj = Instantiate(spawned, GameManager.Instance.WorldMousePos, Quaternion.identity, null);
             obj.name = spawned.name.Insert(0, "GO");
+            obj.SetActive(true);
             Item item = obj.GetComponent<Item>();
             item.SetDragging(true);
             // item.SetLastPoint(point);
